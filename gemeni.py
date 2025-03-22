@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 
 load_dotenv('keys/.env')
 
+#dont use
 def conversation():
     client = genai.Client(api_key=os.getenv('GEMINI_KEY'))
     chat = client.chats.create(model="gemini-2.0-flash")
@@ -23,7 +24,7 @@ def conversation():
         print(f'role - {message.role}', end=": ")
         print(message.parts[0].text)
 
-
+#dont use
 def generate(input):
     """client = genai.Client(api_key=os.getenv("GEMINI_KEY"))
     print("client")"""
@@ -43,6 +44,6 @@ def generate(input):
     )
     return response.text"""
 
-    
+
 
 print(generate("I have a headache"))
