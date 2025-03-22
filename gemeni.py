@@ -30,8 +30,8 @@ def generate(input, history):
     model_name = "tunedModels/filteredmedicaldata-hpwt1yv1lgxb"
     model = generativeai.GenerativeModel(model_name=model_name)
     query = "past question-answers in conversation: "
-    for (question, answer) in history:
-        query += f"(question: {question}, answer: {answer}), "
+    for message in history:
+        query += f"(sender: {message.origin}, message: {message.message}), "
     query += f"current question: {input}. If you believe that you have enough information to pass along to the doctor, you may tell the user that."
     response = model.generate_content(query)
     return response.text
