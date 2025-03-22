@@ -1,7 +1,6 @@
 import streamlit as st
 from dataclasses import dataclass
 from typing import Literal
-import gemeni
 
 st.set_page_config(page_title="ReferAI", layout="wide")
 
@@ -95,7 +94,6 @@ def initialize_session_state():
 def on_click_callback():
     human_prompt = st.session_state.human_prompt
     st.session_state.history.append(human_prompt)
-    gemeni.generate(human_prompt, list(st.session_state.history))
 
 initialize_session_state()
 
