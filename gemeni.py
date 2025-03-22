@@ -24,7 +24,7 @@ def conversation():
         print(f'role - {message.role}', end=": ")
         print(message.parts[0].text)
 
-#dont use
+#
 def generate(input, history):
     generativeai.configure(api_key=os.getenv("GEMINI_KEY"))
     model_name = "tunedModels/filteredmedicaldata-hpwt1yv1lgxb"
