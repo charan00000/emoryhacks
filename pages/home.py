@@ -1,6 +1,8 @@
 import streamlit as st
 from dataclasses import dataclass
 from typing import Literal
+from ..gemeni import generate
+
 
 st.set_page_config(page_title="ReferAI", layout="wide")
 
@@ -93,7 +95,10 @@ def initialize_session_state():
     
 def on_click_callback():
     human_prompt = st.session_state.human_prompt
-    st.session_state.history.append(human_prompt)
+    llm_response = generate(human_prompt, st.session_state.history)
+    st.session_state.history.append(Message("human", human_prompt))
+    st.session_state.history.append(Message("ai", llm_response))
+    # st.session_state.history.append(human_prompt)
 
 initialize_session_state()
 
@@ -103,7 +108,7 @@ credit_card_placeholder = st.empty()
 
 with chat_container:
     for chat in st.session_state.history:
-        st.markdown(chat)
+        st.markdown(f'From {chat.origin}: {chat.message}')
 
 with prompt_container:
     st.markdown("**ReferAI Medical Assistant** - _press Enter to send a message_")
