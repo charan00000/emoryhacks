@@ -8,6 +8,9 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from gemini import generate
 import base64
 from conversation_formatter import make_csv
+from PyPDF2 import PdfReader
+from pdf2image import convert_from_path
+from PIL import Image
 
 st.set_page_config(page_title="ReferAI", layout="wide")
 
@@ -64,6 +67,10 @@ def on_click_callback():
     if len(report_info) > 0:
         make_csv(report_info, upload = True)
 
+def display_pdf(file_path = 'conversation.pdf'):
+    images = convert_from_path(file_path)
+    for image in images:
+        st.image(image)
 
 initialize_session_state()
 
@@ -110,6 +117,8 @@ with prompt_container:
         on_click=on_click_callback
     )
 
+if st.button("Generate Report"):
+    display_pdf()
 
 
 

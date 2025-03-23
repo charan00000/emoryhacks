@@ -1,41 +1,46 @@
 Sender,Message
-human,I have a ehadache
-ai,"Okay, I understand you're experiencing a headache.
-
-To help me understand what might be causing it, can you describe the location of your headache? Is it all over your head, or is it concentrated in a specific area like your temples, forehead, or back of your head?
+human,hello
+ai,"Okay, hello! I'm here to help. To get started, can you tell me what brings you in today? What are you experiencing?
 "
-human,all over
-ai,"Okay, I understand. So the headache is all over your head.
+human,I have a headache
+ai,"Okay, I understand you're experiencing a headache. I can help you to identify the problem.
 
-Can you describe the type of pain you're experiencing? Is it a throbbing, sharp, dull, or squeezing sensation?
+Can you describe the type of pain you're feeling? Is it throbbing, sharp, dull, or something else?
 "
-human,throbbing
-ai,"Okay, I understand. You're experiencing a throbbing headache all over your head.
+human,throbbing pain in the temples
+ai,"Okay, I understand. You're experiencing a throbbing pain in your temples.
 
-On a scale of 1 to 10, with 1 being very mild and 10 being the worst headache you've ever experienced, how would you rate the pain?
+To help me get a clearer picture, can you tell me about the intensity of the pain on a scale of 1 to 10, where 1 is mild and 10 is the worst pain you've ever experienced?
 "
-human,10
-ai,"Okay, I understand. You're experiencing a throbbing headache all over your head, and you rate the pain as a 10 out of 10. That sounds very intense.
+human,7
+ai,"Okay, you're experiencing throbbing pain in your temples, and you rate the intensity as a 7. That sounds quite uncomfortable!
 
-Has anything else been bothering you? For example, have you experienced any nausea, vomiting, or sensitivity to light or sound?
-"
-human,sensitivity to light'
-ai,"Okay, I understand. You're experiencing a throbbing headache all over your head, you rate the pain as a 10 out of 10, and you are also experiencing sensitivity to light. Given the intensity and accompanying sensitivity to light, it could be a migraine.
+Given the throbbing nature and location, it could possibly be related to a tension headache or even a migraine, but it is too early to tell.
 
-How long have you had this headache? Is this a new experience, or have you had similar headaches in the past?
+To help me narrow down the possibilities, have you noticed any other symptoms accompanying the headache, such as nausea, sensitivity to light or sound, or visual disturbances?
 "
+human,sensitivity to ligth
+ai,"Okay, you're experiencing throbbing pain in your temples with an intensity of 7, and you're also experiencing sensitivity to light. This information continues to suggest a possible migraine, but other conditions are possible too.
+
+To gather more information, have you noticed any changes in your vision, such as blurred vision, seeing spots or flashing lights, or any other visual disturbances alongside the sensitivity to light?
+"
+human,blurred visdion
+ai,"Okay, you're experiencing throbbing pain in your temples with an intensity of 7, sensitivity to light, and blurred vision. These symptoms do point more strongly towards a migraine, though it's important to rule out other possibilities.
+
+Has this happened to you before, and if so, how often do you experience these headaches?
+"
+human,first time ever
+ai,"Okay, so this is the first time you've ever experienced these symptoms: throbbing pain in your temples with an intensity of 7, sensitivity to light, and blurred vision. This new information is helpful. As mentioned before, all of these symptoms point towards a migraine, but because this is the first time you are experiencing these symptoms it could be due to a number of other factors.
+
+Have you recently experienced any significant stress or changes in your sleep schedule?
+"
+human,cooked sleep schedule
+ai,"Okay, so this is the first time you've experienced a headache with throbbing pain in your temples (intensity of 7"
 human,no
-ai,"Okay, I understand. You're experiencing a throbbing headache all over your head, you rate the pain as a 10 out of 10, and you are also experiencing sensitivity to light. Given the intensity and accompanying sensitivity to light, it could be a migraine, and this is a new experience.
+ai,"I have finished collecting information about your headache. Here's a summary of what you've told me:
 
-Are you experiencing any visual disturbances, such as blurred vision, seeing spots or flashing lights?
-"
-human,I see floaters
-ai,"Okay, I understand. You're experiencing a throbbing headache all over your head, you rate the pain as a 10 out of 10, you are experiencing sensitivity to light and seeing floaters, and this is a new experience. Given the intensity, sensitivity to light, and visual disturbances, it could be a migraine.
-
-Have you taken any medication for the headache, and if so, what was it and did it provide any relief?
-"
-human,tylenol
-ai,"Okay, I understand. You're experiencing a throbbing headache all over your head, you rate the pain as a 10 out of 10, you are experiencing sensitivity to light and seeing floaters, and this is a new experience. Given the intensity, sensitivity to light, and visual disturbances, it could be a migraine. You have also taken Tylenol.
-
-Did the Tylenol provide any relief? If so, how much?
+*   **Symptom:** You're experiencing a headache with throbbing pain in your temples, rated a 7 in intensity.
+*   **Associated Symptoms:** You also have sensitivity to light and blurred vision.
+*   **History:** This is the first time you've experienced these symptoms.
+*   **Potential Contributing Factors:** You have a ""cooked"" sleep schedule.
 "
