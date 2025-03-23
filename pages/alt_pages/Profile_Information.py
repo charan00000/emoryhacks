@@ -1,6 +1,7 @@
 import streamlit as st
 import datetime
 from dataclasses import dataclass
+import sqlite3
 
 LOGO = "static/emory_hack_logo.png"
 
@@ -26,6 +27,33 @@ def initialize_session_state():
 
 initialize_session_state()
 
+def connect_to_db():
+    conn = sqlite3.connect("emory_hack.db")
+    return conn
+
+def create_table(conn):
+    c = conn.cursor()
+    c.execute(
+        """
+        CREATE TABLE IF NOT EXISTS users (
+            email TEXT,
+            password TEXT,
+            first_name TEXT,
+            last_name TEXT,
+            dob TEXT,
+        """
+    )
+    conn.commit()
+
+def insert_user(conn, user_data):
+    c = conn.cursor()
+    c.execute('''
+        INSERT INTO users (email, password, fn, ln, dob, sex)
+        VALUES (?, ?, ?, ?, ?, ?)
+    ''', (user_data.email, user_data.password, user_data.fn, user_data.ln, user_data.dob, user_data.sex))
+    conn.commit()
+
+
 with st.form("profile-info-form") as prof_info_form:
     fn = st.text_input("Legal First Name", placeholder='Enter legal full name')
     ln = st.text_input("Legal Last Name", placeholder='Enter legal last name')
@@ -49,4 +77,10 @@ if submitted:
     st.session_state.current_user = Person(
         email, password, fn.upper(), ln.upper(), dob.strftime("%m/%d/%Y"), sex.removeprefix(":blue[").removeprefix(":violet[").removesuffix("]").upper()
     )
+
+    conn = connect_to_db()
+    create_table(conn)
+    insert_user(conn, st.session_state.current_user)
+    conn.close()
+
     # st.write(st.session_state.current_user)
