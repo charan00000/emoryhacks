@@ -62,11 +62,9 @@ def on_click_callback():
     st.session_state.history.append(Message("human", human_prompt))
     st.session_state.history.append(Message("ai", current_response))
     st.session_state.human_prompt = ""
-<<<<<<< HEAD
-=======
     if len(report_info) > 0:
         models.update_report(report_info)
->>>>>>> b79936ef03f9f6d0a9ef0a3b1723e5e4e5e86bd0
+
 
 initialize_session_state()
 
