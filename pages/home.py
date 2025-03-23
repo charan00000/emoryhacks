@@ -5,11 +5,8 @@ import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from gemini import generate
-<<<<<<< HEAD
-import models
-=======
 import base64
->>>>>>> cbd55107fc0e015878243ac569a9d9a01fb0a37e
+import models
 
 
 st.set_page_config(page_title="ReferAI", layout="wide")
@@ -63,15 +60,8 @@ def on_click_callback():
     st.session_state.history.append(Message("human", human_prompt))
     st.session_state.history.append(Message("ai", current_response))
     st.session_state.human_prompt = ""
-<<<<<<< HEAD
     if len(report_info) > 0:
         models.update_report(report_info)
-=======
-<<<<<<< HEAD
-=======
->>>>>>> cbd55107fc0e015878243ac569a9d9a01fb0a37e
-
->>>>>>> 47111f3a4286c8707fd4f557676f632ff5b261db
 
 initialize_session_state()
 
