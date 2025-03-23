@@ -3,12 +3,17 @@ import sqlite3
 from streamlit_extras.switch_page_button import switch_page
 from dataclasses import dataclass
 
-st.set_page_config( layout="wide")
-def load_css():
-    with open("static/style.css") as css:
-        st.markdown(f"<style>{css.read()}</style>", unsafe_allow_html=True)
+LOGO = "static/emory_hack_logo.png"
 
-load_css()
+st.set_page_config(
+    page_title="Log in", 
+    layout="wide",
+    )
+
+with open("static/style.css") as css:
+    st.markdown(f"<style>{css.read()}</style>", unsafe_allow_html=True)
+
+st.logo(LOGO, icon_image=LOGO, size="large")
 
 @dataclass
 class Person:
@@ -34,280 +39,236 @@ def check_login(email, password):
 		return False
 	return True
 
-st.markdown(
-    """
-<style>
+# st.markdown(
+#     """
+# <style>
+# * {
+# 	box-sizing: border-box;
+#     font-family: "Poppins", sans-serif;
+#     font-style: normal;
+# }
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+# body {
+# 	background: #f6f5f7;
+# 	display: flex;
+# 	justify-content: center;
+# 	align-items: center;
+# 	flex-direction: column;
+# 	height: 100vh;
 
-  
-  
-  .poppins-regular {
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
-  .poppins-semibold {
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-    font-style: normal;
-  }
-  
-  .poppins-bold {
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-  }
+# }
 
-  .poppins-black {
-    font-family: "Poppins", sans-serif;
-    font-weight: 900;
-    font-style: normal;
-  }
+# h1 {
+# 	font-weight: bold;
+# 	margin: 0;
+# }
 
-  
-  .poppins-regular-italic {
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-style: italic;
-  }
+# h2 {
+# 	text-align: center;
+# }
 
-  
-  .poppins-bold-italic {
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    font-style: italic;
-  }
+# p {
+# 	font-size: 14px;
+# 	font-weight: 100;
+# 	line-height: 20px;
+# 	letter-spacing: 0.5px;
+# 	margin: 20px 0 30px;
+# }
 
+# span {
+# 	font-size: 12px;
+# }
 
-* {
-	box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-    font-style: normal;
-}
+# a {
+# 	color: #333;
+# 	font-size: 14px;
+# 	text-decoration: none;
+# 	margin: 15px 0;
+# }
 
-body {
-	background: #f6f5f7;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	height: 100vh;
+# button {
+# 	border-radius: 20px;
+# 	border: 1px solid #274C77;
+# 	background-color: #274C77;
+# 	color: #FFFFFF;
+# 	font-size: 12px;
+# 	font-weight: bold;
+# 	padding: 12px 45px;
+# 	letter-spacing: 1px;
+# 	text-transform: uppercase;
+# 	transition: transform 80ms ease-in;
+# }
 
-}
+# button:active {
+# 	transform: scale(0.95);
+# }
 
-h1 {
-	font-weight: bold;
-	margin: 0;
-}
+# button:focus {
+# 	outline: none;
+# }
 
-h2 {
-	text-align: center;
-}
+# button.ghost {
+# 	background-color: transparent;
+# 	border-color: #FFFFFF;
+# }
 
-p {
-	font-size: 14px;
-	font-weight: 100;
-	line-height: 20px;
-	letter-spacing: 0.5px;
-	margin: 20px 0 30px;
-}
+# form {
+# 	background-color: #FFFFFF;
+# 	display: flex;
+# 	align-items: center;
+# 	justify-content: center;
+# 	flex-direction: column;
+# 	padding: 0 50px;
+# 	height: 100%;
+# 	text-align: center;
+# }
 
-span {
-	font-size: 12px;
-}
+# input {
+# 	background-color: #eee;
+# 	border: none;
+# 	padding: 12px 15px;
+# 	margin: 8px 0;
+# 	width: 100%;
+# }
 
-a {
-	color: #333;
-	font-size: 14px;
-	text-decoration: none;
-	margin: 15px 0;
-}
+# .container {
+# 	background-color: #274C77;
+# 	border-radius: 10px;
+#   	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+# 			0 10px 10px rgba(0,0,0,0.22);
+# 	position: absolute;
+# 	overflow: hidden;
+# 	width: 768px;
+# 	max-width: 100%;
+# 	min-height: 480px;
+# }
 
-button {
-	border-radius: 20px;
-	border: 1px solid #274C77;
-	background-color: #274C77;
-	color: #FFFFFF;
-	font-size: 12px;
-	font-weight: bold;
-	padding: 12px 45px;
-	letter-spacing: 1px;
-	text-transform: uppercase;
-	transition: transform 80ms ease-in;
-}
+# .form-container {
+# 	position: absolute;
+# 	top: 0;
+# 	height: 100%;
+# 	transition: all 0.6s ease-in-out;
+# }
 
-button:active {
-	transform: scale(0.95);
-}
+# .sign-in-container {
+# 	left: 0;
+# 	width: 50%;
+# 	z-index: 2;
+# }
 
-button:focus {
-	outline: none;
-}
+# .container.right-panel-active .sign-in-container {
+# 	transform: translateX(100%);
+# }
 
-button.ghost {
-	background-color: transparent;
-	border-color: #FFFFFF;
-}
+# .sign-up-container {
+# 	left: 0;
+# 	width: 50%;
+# 	opacity: 0;
+# 	z-index: 1;
+# }
 
-form {
-	background-color: #FFFFFF;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	padding: 0 50px;
-	height: 100%;
-	text-align: center;
-}
+# .container.right-panel-active .sign-up-container {
+# 	transform: translateX(100%);
+# 	opacity: 1;
+# 	z-index: 5;
+# 	animation: show 0.6s;
+# }
 
-input {
-	background-color: #eee;
-	border: none;
-	padding: 12px 15px;
-	margin: 8px 0;
-	width: 100%;
-}
-
-.container {
-	background-color: #274C77;
-	border-radius: 10px;
-  	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
-			0 10px 10px rgba(0,0,0,0.22);
-	position: absolute;
-	overflow: hidden;
-	width: 768px;
-	max-width: 100%;
-	min-height: 480px;
-}
-
-.form-container {
-	position: absolute;
-	top: 0;
-	height: 100%;
-	transition: all 0.6s ease-in-out;
-}
-
-.sign-in-container {
-	left: 0;
-	width: 50%;
-	z-index: 2;
-}
-
-.container.right-panel-active .sign-in-container {
-	transform: translateX(100%);
-}
-
-.sign-up-container {
-	left: 0;
-	width: 50%;
-	opacity: 0;
-	z-index: 1;
-}
-
-.container.right-panel-active .sign-up-container {
-	transform: translateX(100%);
-	opacity: 1;
-	z-index: 5;
-	animation: show 0.6s;
-}
-
-@keyframes show {
-	0%, 49.99% {
-		opacity: 0;
-		z-index: 1;
-	}
+# @keyframes show {
+# 	0%, 49.99% {
+# 		opacity: 0;
+# 		z-index: 1;
+# 	}
 	
-	50%, 100% {
-		opacity: 1;
-		z-index: 5;
-	}
-}
+# 	50%, 100% {
+# 		opacity: 1;
+# 		z-index: 5;
+# 	}
+# }
 
-.overlay-container {
-	position: absolute;
-	top: 0;
-	left: 50%;
-	width: 50%;
-	height: 100%;
-	overflow: hidden;
-	transition: transform 0.6s ease-in-out;
-	z-index: 100;
-}
+# .overlay-container {
+# 	position: absolute;
+# 	top: 0;
+# 	left: 50%;
+# 	width: 50%;
+# 	height: 100%;
+# 	overflow: hidden;
+# 	transition: transform 0.6s ease-in-out;
+# 	z-index: 100;
+# }
 
-.container.right-panel-active .overlay-container{
-	transform: translateX(-100%);
-}
+# .container.right-panel-active .overlay-container{
+# 	transform: translateX(-100%);
+# }
 
-.overlay {
-	background: #274C77;
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: 0 0;
-	color: #FFFFFF;
-	position: relative;
-	left: -100%;
-	height: 100%;
-	width: 200%;
-  	transform: translateX(0);
-	transition: transform 0.6s ease-in-out;
-}
+# .overlay {
+# 	background: #274C77;
+# 	background-repeat: no-repeat;
+# 	background-size: cover;
+# 	background-position: 0 0;
+# 	color: #FFFFFF;
+# 	position: relative;
+# 	left: -100%;
+# 	height: 100%;
+# 	width: 200%;
+#   	transform: translateX(0);
+# 	transition: transform 0.6s ease-in-out;
+# }
 
-.container.right-panel-active .overlay {
-  	transform: translateX(50%);
-}
+# .container.right-panel-active .overlay {
+#   	transform: translateX(50%);
+# }
 
-.overlay-panel {
-	position: absolute;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	padding: 0 40px;
-	text-align: center;
-	top: 0;
-	height: 100%;
-	width: 50%;
-	transform: translateX(0);
-	transition: transform 0.6s ease-in-out;
-}
+# .overlay-panel {
+# 	position: absolute;
+# 	display: flex;
+# 	align-items: center;
+# 	justify-content: center;
+# 	flex-direction: column;
+# 	padding: 0 40px;
+# 	text-align: center;
+# 	top: 0;
+# 	height: 100%;
+# 	width: 50%;
+# 	transform: translateX(0);
+# 	transition: transform 0.6s ease-in-out;
+# }
 
-.overlay-left {
-	transform: translateX(-20%);
-}
+# .overlay-left {
+# 	transform: translateX(-20%);
+# }
 
-.container.right-panel-active .overlay-left {
-	transform: translateX(0);
-}
+# .container.right-panel-active .overlay-left {
+# 	transform: translateX(0);
+# }
 
-.overlay-right {
-	right: 0;
-	transform: translateX(0);
-}
+# .overlay-right {
+# 	right: 0;
+# 	transform: translateX(0);
+# }
 
-.container.right-panel-active .overlay-right {
-	transform: translateX(20%);
-}
+# .container.right-panel-active .overlay-right {
+# 	transform: translateX(20%);
+# }
 
-.social-container {
-	margin: 20px 0;
-}
+# .social-container {
+# 	margin: 20px 0;
+# }
 
-.social-container a {
-	border: 1px solid #DDDDDD;
-	border-radius: 50%;
-	display: inline-flex;
-	justify-content: center;
-	align-items: center;
-	margin: 0 5px;
-	height: 40px;
-	width: 40px;
-}
-</style>
-    """,
-    unsafe_allow_html=True,
-)
+# .social-container a {
+# 	border: 1px solid #DDDDDD;
+# 	border-radius: 50%;
+# 	display: inline-flex;
+# 	justify-content: center;
+# 	align-items: center;
+# 	margin: 0 5px;
+# 	height: 40px;
+# 	width: 40px;
+# }
+# </style>
+#     """,
+#     unsafe_allow_html=True,
+# )
 # st.markdown(
 #     """
 # <div class="container poppins-regular" id="container">
@@ -360,113 +321,113 @@ input {
 #     unsafe_allow_html=True,
 # )
 
-st.markdown("""
-    <style>
-        <style>
-        /* Set the background color for the entire page */
-        body {
-            background-color: #f6f5f7;
-            font-family: 'Arial', sans-serif;
-        }
+# st.markdown("""
+#     <style>
+#         <style>
+#         /* Set the background color for the entire page */
+#         body {
+#             background-color: #f6f5f7;
+#             font-family: 'Arial', sans-serif;
+#         }
 
-        /* Style the form container */
-        .stContainer {
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-        }
+#         /* Style the form container */
+#         .stContainer {
+#             background-color: #ffffff;
+#             padding: 30px;
+#             border-radius: 10px;
+#             box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+#         }
 
-        /* Style the circular social buttons */
-        .social-button {
-            border: 1px solid #DDDDDD;
-            border-radius: 50%;
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            margin: 20px 10px;
-            height: 50px;
-            width: 50px;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
+#         /* Style the circular social buttons */
+#         .social-button {
+#             border: 1px solid #DDDDDD;
+#             border-radius: 50%;
+#             display: inline-flex;
+#             justify-content: center;
+#             align-items: center;
+#             margin: 20px 10px;
+#             height: 50px;
+#             width: 50px;
+#             cursor: pointer;
+#             transition: transform 0.2s;
+#         }
 
-        .social-button:hover {
-            transform: scale(1.1);
-        }
+#         .social-button:hover {
+#             transform: scale(1.1);
+#         }
 
-        .google-button {
-            background-color: #4285F4;
-            color: white;
-        }
+#         .google-button {
+#             background-color: #4285F4;
+#             color: white;
+#         }
 
-        .microsoft-button {
-            background-color: #00A4EF;
-            color: white;
-        }
+#         .microsoft-button {
+#             background-color: #00A4EF;
+#             color: white;
+#         }
 
-        .google-button i, .microsoft-button i {
-            font-size: 24px;
-        }
+#         .google-button i, .microsoft-button i {
+#             font-size: 24px;
+#         }
 
-        footer {
-            background-color: #222;
-            color: #fff;
-            font-size: 14px;
-            padding: 10px;
-            text-align: center;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
+#         footer {
+#             background-color: #222;
+#             color: #fff;
+#             font-size: 14px;
+#             padding: 10px;
+#             text-align: center;
+#             position: fixed;
+#             bottom: 0;
+#             width: 100%;
+#         }
 
-        footer a {
-            color: #3c97bf;
-            text-decoration: none;
-        }
-    </style>
-""", unsafe_allow_html=True)
+#         footer a {
+#             color: #3c97bf;
+#             text-decoration: none;
+#         }
+#     </style>
+# """, unsafe_allow_html=True)
 
 login, signup = st.tabs(["Login", "Sign Up"])
 
-st.markdown(
-	"""
-	<style>
+# st.markdown(
+# 	"""
+# 	<style>
 
 	
-	[data-testid="stForm"] {
-    	background-color: #274C77;
-		box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
-			0 10px 10px rgba(0,0,0,0.22);
-	}	
+# 	[data-testid="stForm"] {
+#     	background-color: #274C77;
+# 		box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+# 			0 10px 10px rgba(0,0,0,0.22);
+# 	}	
 
-	[data-testid="stBaseButton-secondaryFormSubmit"] {
-    	background-color: #F8F9FA;
-	}	
-	.st-af {
-    	font-size:24px;
-	}	
+# 	[data-testid="stBaseButton-secondaryFormSubmit"] {
+#     	background-color: #F8F9FA;
+# 	}	
+# 	.st-af {
+#     	font-size:24px;
+# 	}	
 
-	em {
-		color: #F8F9FA;
-	}
-	strong {
-		color: #274C77;
-	}
+# 	em {
+# 		color: #F8F9FA;
+# 	}
+# 	strong {
+# 		color: #274C77;
+# 	}
 
-	h3 {
-	    text-align: center;
-	    color: #274C77;
+# 	h3 {
+# 	    text-align: center;
+# 	    color: #274C77;
 		
-	}
-</style>
-""", unsafe_allow_html=True)
+# 	}
+# </style>
+# """, unsafe_allow_html=True)
 
 with login:
 
 	with st.form("login-form", clear_on_submit=True, border=True) as login_form:
-		email = st.text_input("*Email*", key="email-text")
-		password = st.text_input("*Password*", key="password-text")
+		email = st.text_input("Email", key="email-text", placeholder="Enter email")
+		password = st.text_input("Password", key="password-text", placeholder="Enter password")
 		submitted = st.form_submit_button("**Log in**",type="secondary")
 		if submitted and check_login(email, password):
 			st.write(email, password,)
@@ -476,9 +437,9 @@ with login:
 			st.write('Login failed')
 with signup:
 	with st.form("signup-form", clear_on_submit=True, border=True) as login_form:
-		email = st.text_input("*Email*", key="email-text2", placeholder="Email")
-		password = st.text_input("*Password*", key="password-text2", placeholder="Password")
-		verify_password = st.text_input("*Verify Password*", key="verify-password-text", placeholder="Type your password again")
+		email = st.text_input("Email", key="email-text2", placeholder="Email")
+		password = st.text_input("Password", key="password-text2", placeholder="Password")
+		verify_password = st.text_input("Verify Password", key="verify-password-text", placeholder="Type your password again")
 		submitted = st.form_submit_button("**Sign up**",type="secondary")
 		if submitted:
 			conn = sqlite3.connect("emory_hack.db")
