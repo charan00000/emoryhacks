@@ -29,10 +29,10 @@ def generate(input, history):
     generativeai.configure(api_key=os.getenv("GEMINI_KEY"))
     model_name = "tunedModels/filteredmedicaldata-hpwt1yv1lgxb"
     model = generativeai.GenerativeModel(model_name=model_name)
-    query = "past question-answers in conversation: "
+    query = "You are an ai model that should act like a nurse and ask questions to the user to gather more information about the user's potential medical concern. The following list represents the history of the ongoing conversation so far. You can either ask another question to supplement the conversation history, briefly explain what the issue might be, and/or tell the user that you have collected adequate information to generate the report."
     for message in history:
         query += f"(sender: {message.origin}, message: {message.message}), "
-    query += f"current question: {input}. If you believe that you have enough information to pass along to the doctor, you may tell the user that. If and only if the user does not provide a medical-related prompt, you can provide a general, non-medical related answer."
+    query += f"current prompt: {input}. If you believe that you have enough information to pass along to the doctor, you may tell the user that. If the user does not provide a medical-related prompt, you can provide a general, non-medical related response."
     response = model.generate_content(query)
     return response.text
 
