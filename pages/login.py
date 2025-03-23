@@ -27,8 +27,17 @@ class Person:
 def initialize_session_state():
 	if "current_user" not in st.session_state:
 		st.session_state.current_user = Person("", "", "", "", "", "")
+	if "logged_in" not in st.session_state:
+		st.session_state.logged_in = False
 
 initialize_session_state()
+
+if st.session_state.logged_in:
+    st.success(f"You're already logged in as {st.session_state.current_user.email}")
+    if st.button("Go to Home"):
+        switch_page("Home")
+    st.stop()
+
 def check_login(email, password):
 	conn = sqlite3.connect("emory_hack.db")
 	c = conn.cursor()
@@ -430,11 +439,23 @@ with login:
 		password = st.text_input("Password", key="password-text", placeholder="Enter password")
 		submitted = st.form_submit_button("**Log in**",type="secondary")
 		if submitted and check_login(email, password):
-			st.write(email, password,)
-			st.success("Login successful!")
-			switch_page("Home")
-		elif submitted:
-			st.write('Login failed')
+			conn = sqlite3.connect("emory_hack.db")
+			c = conn.cursor()
+			c.execute("SELECT * FROM users WHERE email = ?", (email,))
+			user = c.fetchone()
+			conn.close()
+			if user:
+				st.session_state.current_user = Person(
+                    email=user[0],
+                    password=user[1],
+                    fn=user[2],
+                    ln=user[3],
+                    dob=user[4],
+                    sex=user[5]
+                )
+				st.session_state.logged_in = True
+				st.success("Login successful!")
+				switch_page("Home")
 with signup:
 	with st.form("signup-form", clear_on_submit=True, border=True) as login_form:
 		email = st.text_input("Email", key="email-text2", placeholder="Email")
