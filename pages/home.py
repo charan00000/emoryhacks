@@ -5,6 +5,7 @@ import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from gemini import generate
+import models
 
 
 st.set_page_config(page_title="ReferAI", layout="wide")
@@ -53,11 +54,13 @@ def on_click_callback():
     human_prompt = st.session_state.human_prompt
     llm_response = generate(human_prompt, st.session_state.history, st.session_state.num_responses)[0]
     current_response = llm_response[0]
-    history_string = llm_response[1]
+    report_info = llm_response[1]
     st.session_state.num_responses += 1
     st.session_state.history.append(Message("human", human_prompt))
     st.session_state.history.append(Message("ai", current_response))
     st.session_state.human_prompt = ""
+    if len(report_info) > 0:
+        models.update_report(report_info)
 
 
 initialize_session_state()

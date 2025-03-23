@@ -34,7 +34,11 @@ def upload_doc_file(file = 'doctor_info.csv', bucket = 'emoryhacksdoctors'):
 
 def add_doctor(args):
     athena_client = boto3.client('athena')
-    
+
+
+
+def update_report(question_answer_string):
+    print("")
 
 if __name__ == '__main__':
     initialize()
