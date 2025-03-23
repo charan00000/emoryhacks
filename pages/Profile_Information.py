@@ -23,10 +23,11 @@ class Person:
     ln: str
     dob: str
     sex: str
+    city: str
 
 def initialize_session_state():
     if "current_user" not in st.session_state:
-        st.session_state.current_user = Person("", "", "", "", "", "") 
+        st.session_state.current_user = Person("", "", "", "", "", "", "") 
 
 initialize_session_state()
 
@@ -36,6 +37,8 @@ def connect_to_db():
 
 def create_table(conn):
     c = conn.cursor()
+    #c.execute(f"DROP TABLE IF EXISTS users")
+    #conn.commit()
     c.execute(
         """
         CREATE TABLE IF NOT EXISTS users (
@@ -44,7 +47,8 @@ def create_table(conn):
             first_name TEXT,
             last_name TEXT,
             dob TEXT,
-            sex TEXT
+            sex TEXT,
+            city TEXT
         )
         """
     )
@@ -53,9 +57,9 @@ def create_table(conn):
 def insert_user(conn, user_data):
     c = conn.cursor()
     c.execute('''
-        INSERT INTO users (email, password, first_name, last_name, dob, sex)
-        VALUES (?, ?, ?, ?, ?, ?)
-    ''', (user_data.email, user_data.password, user_data.fn, user_data.ln, user_data.dob, user_data.sex))
+        INSERT INTO users (email, password, first_name, last_name, dob, sex, city)
+        VALUES (?, ?, ?, ?, ?, ?, ?)
+    ''', (user_data.email, user_data.password, user_data.fn, user_data.ln, user_data.dob, user_data.sex, user_data.city))
     conn.commit()
 
 
@@ -63,6 +67,7 @@ with st.form("profile-info-form") as prof_info_form:
     fn = st.text_input("Legal First Name", placeholder='Enter legal full name')
     ln = st.text_input("Legal Last Name", placeholder='Enter legal last name')
     dob = st.date_input("Date of Birth", value="today", format="MM/DD/YYYY", min_value=datetime.date(1900, 1, 1))
+    location = st.text_input("City", placeholder="Enter city")
     
     placeholder_radio = st.empty()
     placeholder_add_input = st.empty()
@@ -80,7 +85,7 @@ if submitted:
     email = st.session_state.current_user.email
     password = st.session_state.current_user.password
     st.session_state.current_user = Person(
-        email, password, fn.upper(), ln.upper(), dob.strftime("%m/%d/%Y"), sex.removeprefix(":blue[").removeprefix(":violet[").removesuffix("]").upper()
+        email, password, fn.upper(), ln.upper(), dob.strftime("%m/%d/%Y"), sex.removeprefix(":blue[").removeprefix(":violet[").removesuffix("]").upper(), location.lower()
     )
 
     conn = connect_to_db()
@@ -94,9 +99,9 @@ if submitted:
         # Update the existing user's information
         c.execute('''
             UPDATE users
-            SET password = ?, first_name = ?, last_name = ?, dob = ?, sex = ?
+            SET password = ?, first_name = ?, last_name = ?, dob = ?, sex = ?, city = ?
             WHERE email = ?
-        ''', (password, st.session_state.current_user.fn, st.session_state.current_user.ln, st.session_state.current_user.dob, st.session_state.current_user.sex, email))
+        ''', (password, st.session_state.current_user.fn, st.session_state.current_user.ln, st.session_state.current_user.dob, st.session_state.current_user.sex, st.session_state.current_user.city, email))
         st.success("Profile updated successfully!")
     else:
         # Insert a new user if the email does not exist

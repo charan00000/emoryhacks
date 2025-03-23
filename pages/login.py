@@ -23,10 +23,11 @@ class Person:
 	ln: str	
 	dob: str
 	sex: str
+	location: str
 
 def initialize_session_state():
 	if "current_user" not in st.session_state:
-		st.session_state.current_user = Person("", "", "", "", "", "")
+		st.session_state.current_user = Person("", "", "", "", "", "", "")
 	if "logged_in" not in st.session_state:
 		st.session_state.logged_in = False
 
@@ -69,7 +70,8 @@ with login:
                     fn=user[2],
                     ln=user[3],
                     dob=user[4],
-                    sex=user[5]
+                    sex=user[5],
+					location=user[6]
                 )
 				st.session_state.logged_in = True
 				st.success("Login successful!")
