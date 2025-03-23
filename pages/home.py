@@ -48,13 +48,19 @@ class Message:
 def initialize_session_state():
     if "history" not in st.session_state:
         st.session_state.history = []
+        st.session_state.num_responses = 0
     
 def on_click_callback():
     human_prompt = st.session_state.human_prompt
-    llm_response = generate(human_prompt, st.session_state.history)
+    llm_response = generate(human_prompt, st.session_state.history, st.session_state.num_responses)
+    st.session_state.num_responses += 1
     st.session_state.history.append(Message("human", human_prompt))
     st.session_state.history.append(Message("ai", llm_response))
     st.session_state.human_prompt = ""
+<<<<<<< HEAD
+=======
+
+>>>>>>> 47111f3a4286c8707fd4f557676f632ff5b261db
 
 initialize_session_state()
 
