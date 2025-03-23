@@ -55,6 +55,7 @@ def on_click_callback():
     st.session_state.num_responses += 1
     st.session_state.history.append(Message("human", human_prompt))
     st.session_state.history.append(Message("ai", llm_response))
+    st.session_state.human_prompt = ""
 
 
 initialize_session_state()

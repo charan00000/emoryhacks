@@ -28,7 +28,7 @@ def conversation():
 def generate(input, history, num_responses):
     generativeai.configure(api_key=os.getenv("GEMINI_KEY"))
     model_name = "tunedModels/filteredmedicaldata-hpwt1yv1lgxb"
-    general_model_name = 'gemini-1.5-flash'
+    general_model_name = 'gemini-2.0-flash'
     model = generativeai.GenerativeModel(model_name=model_name)
     general_model = generativeai.GenerativeModel(model_name=general_model_name)
     query = "You are an ai model that should act like a nurse and ask questions to the user to " \
@@ -43,11 +43,11 @@ def generate(input, history, num_responses):
     query += f"current prompt: {input}. "
     if num_responses > 7:
         query = "You are an ai nurse that has finished collecting data about the user's medical concern. " \
-        "You should let the user know that you have finished collecting information and provide a summary of the user's medical concern using the given conversation history as context. "
+        "You should let the user know that you have finished collecting information and provide a summary of the user's medical concern using the given conversation history as context: "
     if num_responses <= 7:
-        return model.generate_content(query).text
-    else:
         return general_model.generate_content(query).text
+    else:
+        return general_model.generate_content(query + history_string).text
 
 
 if __name__ == '__main__':
