@@ -47,6 +47,6 @@ if submitted:
     email = st.session_state.current_user.email
     password = st.session_state.current_user.password
     st.session_state.current_user = Person(
-        email, password, fn, ln, dob.strftime("%m/%d/%Y"), sex.removeprefix(":blue[").removeprefix(":violet[").removesuffix("]")
+        email, password, fn.upper(), ln.upper(), dob.strftime("%m/%d/%Y"), sex.removeprefix(":blue[").removeprefix(":violet[").removesuffix("]").upper()
     )
     # st.write(st.session_state.current_user)
