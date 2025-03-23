@@ -32,7 +32,7 @@ def generate(input, history):
     query = "past question-answers in conversation: "
     for message in history:
         query += f"(sender: {message.origin}, message: {message.message}), "
-    query += f"current question: {input}. If you believe that you have enough information to pass along to the doctor, you may tell the user that."
+    query += f"current question: {input}. If you believe that you have enough information to pass along to the doctor, you may tell the user that. If and only if the user does not provide a medical-related prompt, you can provide a general, non-medical related answer."
     response = model.generate_content(query)
     return response.text
 
