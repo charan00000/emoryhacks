@@ -2,8 +2,9 @@ import re
 import pandas as pd
 import models
 import conversation
+from weasyprint import HTML 
 
-# Provided text
+
 def make_csv(text, upload = False):
     # Regular expression to extract sender and message pairs
     pattern = r"\(sender: (.*?), message: (.*?)\)(?=,|$)"
@@ -19,6 +20,9 @@ def make_csv(text, upload = False):
 
     if upload:
         models.upload_conversation()
+
+def html_to_pdf(html_path = "conversation.html", output_path = "conversation.pdf"):
+    HTML(html_path).write_pdf(output_path)
 
 text = """
 (sender: human, message: I have a headache), 
@@ -50,4 +54,5 @@ Has anything specific triggered the headache, such as stress, prolonged computer
 
 if __name__ == '__main__':
     make_csv(text, upload = False)
+    html_to_pdf()
 
