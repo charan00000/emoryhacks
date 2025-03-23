@@ -1,4 +1,5 @@
 import streamlit as st
+from streamlit_extras.switch_page_button import switch_page
 from dataclasses import dataclass
 from typing import Literal
 import sys
@@ -18,10 +19,10 @@ with open("static/style.css") as css:
 # Header
 st.markdown(
     """
-    <div class="header">
-        <div><strong>ReferAI</strong></div>
+    <div class="navbar">
+        <div class="referai"><strong>ReferAI</strong></div>
         <div>
-            <a href="#">Help</a>
+            <a href="#Help">Help</a>
             <a href="#">Connect With Us</a>
             <a href="#">About</a>
         </div>
@@ -48,6 +49,7 @@ class Message:
 def initialize_session_state():
     if "history" not in st.session_state:
         st.session_state.history = []
+    if "num_responses" not in st.session_state:
         st.session_state.num_responses = 0
     
 def on_click_callback():
@@ -57,10 +59,6 @@ def on_click_callback():
     st.session_state.history.append(Message("human", human_prompt))
     st.session_state.history.append(Message("ai", llm_response))
     st.session_state.human_prompt = ""
-<<<<<<< HEAD
-=======
-
->>>>>>> 47111f3a4286c8707fd4f557676f632ff5b261db
 
 initialize_session_state()
 
