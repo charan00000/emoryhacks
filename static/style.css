@@ -80,3 +80,100 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+
+
+/* Base style for all pages */
+html, body, [data-testid="stApp"] {
+  background-color: #F8F9FA;
+  font-family: "Poppins", sans-serif;
+  color: #274C77;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: #274C77;
+  font-weight: 600;
+}
+
+/* Streamlit form styling */
+[data-testid="stForm"] {
+  background-color: #F8F9FA;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  margin-bottom: 40px;
+}
+
+/* Streamlit buttons */
+button[kind="secondary"], button[kind="primary"] {
+  background-color: #274C77 !important;
+  color: #F8F9FA !important;
+  border-radius: 12px !important;
+  padding: 10px 24px !important;
+  transition: 0.3s;
+}
+button:hover {
+  transform: scale(1.05);
+}
+
+/* Inputs */
+input, textarea {
+  background-color: #F8F9FA !important;
+  border: none !important;
+  border-radius: 8px !important;
+  padding: 12px 16px !important;
+}
+
+/* Tabs */
+[data-testid="stTabs"] {
+  margin-bottom: 24px;
+}
+.stTabs [data-baseweb="tab"] {
+  background-color: #F8F9FA !important;
+  color: #274C77 !important;
+  border-radius: 12px 12px 0 0 !important;
+}
+.stTabs [data-baseweb="tab"]:hover {
+  background-color: #F8F9FA !important;
+}
+
+/* Footer (if you use one) */
+footer {
+  background-color: #274C77;
+  color: #F8F9FA;
+  text-align: center;
+  padding: 12px;
+}
+
+/* Optional: center content on certain pages */
+.centered-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 100px);
+}
+
+/* Consistent card styling if needed */
+.card {
+  background: #F8F9FA;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+/* Social icons if used */
+.social-button {
+  border: 1px soli #F8F9FA;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  width: 45px;
+  margin: 0 8px;
+  transition: 0.3s;
+}
+.social-button:hover {
+  transform: scale(1.1);
+}
