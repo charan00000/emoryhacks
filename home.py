@@ -12,21 +12,34 @@ from PyPDF2 import PdfReader
 from pdf2image import convert_from_path
 from PIL import Image
 
-LOGO = "static/emory_hack_logo.png"
-
-st.set_page_config(
-    page_title="ReferAI", 
-    layout="wide",
-    )
+st.set_page_config(page_title="ReferAI", layout="wide")
 
 with open("static/style.css") as css:
     st.markdown(f"<style>{css.read()}</style>", unsafe_allow_html=True)
 
-st.logo(LOGO, icon_image=LOGO, size="large")
-st.title("ReferAI")
+
+
+# Header
+st.markdown(
+    """
+    <div class="navbar">
+        <div class="referai"><strong>ReferAI</strong></div>
+        <div>
+            <a href="#Help">Help</a>
+            <a href="#">Connect With Us</a>
+            <a href="#">About</a>
+        </div>
+        <div class="header-buttons">
+            <button>Log in</button>
+            <button>Sign up</button>
+        </div>
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
 
 # Title
-st.markdown("<h2><strong>The Right Doctor. The Right Time.</strong></h2>", unsafe_allow_html=True)
+st.markdown("<h1><strong>The Right Doctor. The Right Time.</strong></h1>", unsafe_allow_html=True)
 
 
 # chat section
@@ -108,10 +121,10 @@ if st.button("Generate Report"):
     display_pdf()
 
 
+
 # Search section
-search_cols = st.columns((6, 1))
-search_cols[0].markdown('<h2>Find the right doctor for you!</h2>', unsafe_allow_html=True)
-search_cols[1].button("Search")
+st.markdown('<h2>Find the right doctor for you!</h2>', unsafe_allow_html=True)
+st.button("Search")
 
 # Footer
 st.markdown('<div class="footer">ReferAI - Your Health Assistant</div>', unsafe_allow_html=True)
