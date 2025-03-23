@@ -53,7 +53,7 @@ def initialize_session_state():
     
 def on_click_callback():
     human_prompt = st.session_state.human_prompt
-    llm_response = generate(human_prompt, st.session_state.history, st.session_state.num_responses)[0]
+    llm_response = generate(human_prompt, st.session_state.history, st.session_state.num_responses)
     current_response = llm_response[0]
     report_info = llm_response[1]
     st.session_state.num_responses += 1
