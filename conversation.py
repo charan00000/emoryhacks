@@ -1,15 +1,12 @@
 import pandas as pd
 
 def generate_html(csv_path = 'conversation.csv'):
-    # Read the CSV file
     df = pd.read_csv('conversation.csv')
 
-    # Generate HTML content
     html_content = ""
     for index, row in df.iterrows():
         html_content += f"<p>{row['Sender']}: {row['Message']}</p>\n"
 
-    # HTML template
     html_template = f"""
     <!DOCTYPE html>
     <html lang="en">
@@ -54,7 +51,6 @@ def generate_html(csv_path = 'conversation.csv'):
     </html>
     """
 
-    # Save the HTML content to a file
     with open('conversation.html', 'w') as file:
         file.write(html_template)
 
