@@ -1,11 +1,16 @@
 import streamlit as st
+from streamlit_extras.switch_page_button import switch_page
 from dataclasses import dataclass
 from typing import Literal
 import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from gemini import generate
-
+import base64
+from conversation_formatter import make_csv
+from PyPDF2 import PdfReader
+from pdf2image import convert_from_path
+from PIL import Image
 
 st.set_page_config(page_title="ReferAI", layout="wide")
 
@@ -17,10 +22,10 @@ with open("static/style.css") as css:
 # Header
 st.markdown(
     """
-    <div class="header">
-        <div><strong>ReferAI</strong></div>
+    <div class="navbar">
+        <div class="referai"><strong>ReferAI</strong></div>
         <div>
-            <a href="#">Help</a>
+            <a href="#Help">Help</a>
             <a href="#">Connect With Us</a>
             <a href="#">About</a>
         </div>
@@ -47,32 +52,51 @@ class Message:
 def initialize_session_state():
     if "history" not in st.session_state:
         st.session_state.history = []
+    if "num_responses" not in st.session_state:
+        st.session_state.num_responses = 0
     
 def on_click_callback():
     human_prompt = st.session_state.human_prompt
-    llm_response = generate(human_prompt, st.session_state.history)
+    llm_response = generate(human_prompt, st.session_state.history, st.session_state.num_responses)
+    current_response = llm_response[0]
+    report_info = llm_response[1]
+    st.session_state.num_responses += 1
     st.session_state.history.append(Message("human", human_prompt))
-    st.session_state.history.append(Message("ai", llm_response))
+    st.session_state.history.append(Message("ai", current_response))
+    st.session_state.human_prompt = ""
+    if len(report_info) > 0:
+        make_csv(report_info, upload = True)
+
+def display_pdf(file_path = 'conversation.pdf'):
+    images = convert_from_path(file_path)
+    for image in images:
+        st.image(image)
 
 initialize_session_state()
 
-chat_container = st.container()
+chat_container = st.container(key="chat-container")
 prompt_container = st.form("chat-form")
 credit_card_placeholder = st.empty()
 
 with chat_container:
     for message in st.session_state.history:
-        img = ":material/person:" if message.origin == "human" else ":material/"
+        img_path = (
+        "static/person_icon_emory_hacks.png"
+        if message.origin == "human"
+        else
+        "static/robot_icon_emory_hacks.png"
+        )    
         rev = '' if message.origin == "ai" else 'row-reverse'
+        ai_human_bubble = (   
+            'ai-bubble' 
+            if message.origin == 'ai' 
+            else 
+            'human-bubble'
+        )
         div = f"""
             <div class="chat-row {rev}">
-            <img src={
-                "static/person_icon_emory_hacks.png"
-                if message.origin == "human"
-                else
-                "static/robot_icon_emory_hacks.png"
-            }>
-                <div>{message.message}</div>
+            <img src="data:image/png;base64,{base64.b64encode(open(img_path, 'rb').read()).decode()}" width="32" height="32">
+                <div class="chat-bubble {ai_human_bubble}">{message.message}</div>
             </div>
         """
         st.markdown(div, unsafe_allow_html= True)
@@ -93,6 +117,8 @@ with prompt_container:
         on_click=on_click_callback
     )
 
+if st.button("Generate Report"):
+    display_pdf()
 
 
 

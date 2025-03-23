@@ -2,6 +2,7 @@ import pandas as pd
 import boto3
 import os
 from dotenv import load_dotenv
+import conversation_formatter
 load_dotenv('keys/.env')
 args = ('Doctor Name', 'Address', 'Location (city, state)', 'Practicing Specialty', 'Calendar Link')
 
@@ -30,11 +31,18 @@ def initialize(upload = True):
 def upload_doc_file(file = 'doctor_info.csv', bucket = 'emoryhacksdoctors'):
     s3 = boto3.client('s3')
     s3.upload_file(file, bucket, file)
-    print('uploaded to ' + bucket)
+    print('doc file uploaded to ' + bucket)
+
+def upload_conversation(file = 'conversation.csv', bucket = 'emoryhacksconversation'):
+    s3 = boto3.client('s3')
+    s3.upload_file(file, bucket, file)
+    print('convo csv uploaded to ' + bucket)
 
 def add_doctor(args):
     athena_client = boto3.client('athena')
-    
+
+
+
 
 if __name__ == '__main__':
     initialize()
