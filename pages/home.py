@@ -6,8 +6,7 @@ import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from gemini import generate
 import base64
-import models
-
+from conversation_formatter import make_csv
 
 st.set_page_config(page_title="ReferAI", layout="wide")
 
@@ -61,7 +60,7 @@ def on_click_callback():
     st.session_state.history.append(Message("ai", current_response))
     st.session_state.human_prompt = ""
     if len(report_info) > 0:
-        models.update_report(report_info)
+        make_csv(report_info, upload = True)
 
 initialize_session_state()
 
