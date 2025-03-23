@@ -502,5 +502,16 @@ st.markdown("""
 	<h3>- OR -</h3>
 """, unsafe_allow_html=True)
 
+google, microsoft = st.columns(2)
+
+if google.button("Sign in with Google"):
+	st.login("google")
+
+if google.button("sign out of google"):
+	st.logout()
+
+if st.experimental_user.is_logged_in:
+	st.header(f"Welcome, {st.experimental_user.name}!")
+	st.image(st.experimental_user.picture)
 
 

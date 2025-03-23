@@ -4,3 +4,4 @@ kaggle/
 model/
 conversation.csv
 .streamlit/secret.toml
+.streamlit/
