@@ -13,4 +13,22 @@
 .row-reverse {
   flex-direction: row-reverse;
 }
-  
+
+.chat-bubble {
+  border: 1px solid transparent;
+  padding: 5px 10px;
+  margin: 0px 7px;
+  max-width: 70%;
+}
+
+.ai-bubble {
+  background-color: #274C77;
+  color: #F8F9FA;
+  border-radius: 10px;
+}
+
+.human-bubble {
+  background-color: #C8B6FF;
+  color: #F8F9FA;
+  border-radius: 10px;
+}
