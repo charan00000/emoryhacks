@@ -1,7 +1,7 @@
 import streamlit as st
 from dataclasses import dataclass
 from typing import Literal
-from ..gemeni import generate
+from ..gemini import generate
 
 
 st.set_page_config(page_title="ReferAI", layout="wide")
@@ -98,7 +98,6 @@ def on_click_callback():
     llm_response = generate(human_prompt, st.session_state.history)
     st.session_state.history.append(Message("human", human_prompt))
     st.session_state.history.append(Message("ai", llm_response))
-    # st.session_state.history.append(human_prompt)
 
 initialize_session_state()
 
