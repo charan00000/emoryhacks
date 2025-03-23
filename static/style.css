@@ -14,7 +14,6 @@
   flex-direction: row-reverse;
 }
 
-<<<<<<< HEAD
 .container {
   display: flex;
   flex-direction: column;
@@ -53,7 +52,6 @@ body {
   background-color: #274C77;
 }
   
-=======
 .chat-bubble {
   border: 1px solid transparent;
   padding: 5px 10px;
@@ -82,4 +80,3 @@ body {
   justify-content: space-between;
   align-items: center;
 }
->>>>>>> 288cdcae9e53bdad782ff56dfc6107a10657b765

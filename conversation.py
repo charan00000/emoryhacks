@@ -1,4 +1,5 @@
 import pandas as pd
+import os
 from weasyprint import HTML
 
 def generate_html(csv_path = 'conversation.csv'):

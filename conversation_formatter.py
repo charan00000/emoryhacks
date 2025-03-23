@@ -2,7 +2,6 @@ import re
 import pandas as pd
 import models
 import conversation
-from weasyprint import HTML 
 
 
 def make_csv(text, upload = False):
