@@ -1,27 +1,20 @@
 Sender,Message
-human,i am having heart pain
-ai,"Okay, I understand you're experiencing heart pain. To help me understand what might be going on, can you describe the location of the pain? Is it in the center of your chest, or more to one side?
+human,I have heart pain 
+ai,"Okay, I understand you're experiencing heart pain. To help me understand what might be going on, can you describe the location and sensation of the pain? For example, is it a sharp, stabbing pain, a dull ache, or a squeezing sensation? And where exactly in your chest do you feel it?
 "
-human,near my heart
-ai,"Okay, you're saying the pain is near your heart. Can you describe the sensation of the pain? Is it sharp, dull, a squeezing feeling, or something else?
+human,sharo
+ai,"Okay, you described the pain as ""sharp"". How long does the sharp pain usually last?
 "
-human,sharp
-ai,"Okay, the pain near your heart is sharp. When did this sharp pain start?
+human,few min
+ai,"Okay, the sharp pain lasts for a few minutes. Does anything in particular seem to trigger the pain, or does it come on randomly?
 "
-human,few munites ago
-ai,"Okay, you're experiencing sharp pain near your heart that started a few minutes ago. Has anything specific triggered this sharp pain, like exercise, stress, or eating?
-Based on the information you've provided so far, it's difficult to determine the exact cause of your sharp heart pain. Sharp chest pain that comes on suddenly can be associated with various conditions, ranging from musculoskeletal issues to more serious cardiac problems. However, the sudden onset is concerning.
-"
-human,stress
-ai,"Okay, you mentioned that stress triggered the sharp pain near your heart that started a few minutes ago. On a scale of 1 to 10, with 1 being very mild and 10 being the worst pain you can imagine, how would you rate the intensity of the sharp pain you're currently experiencing?
-"
-human,7
-ai,"Okay, you're experiencing sharp pain near your heart, rated at a 7 out of 10, and it was triggered by stress. Are you experiencing any other symptoms along with the pain, such as shortness of breath, nausea, sweating, dizziness, or pain in your arm, jaw, or back?
-"
-human,"i am having pain in my left arm, shortness of breath, nausea, sweating"
-ai,"Okay, you're experiencing sharp pain near your heart (rated 7/10 and triggered by stress"
-human,no this is the first time
-ai,"Okay, this is the first time you've experienced these symptoms (sharp heart pain rated 7/10, triggered by stress, along with left arm pain, shortness of breath, nausea, and sweating). Do you have any known heart conditions, high blood pressure, high cholesterol, diabetes, or a family history of heart problems?
+human,randomly
+ai,"Okay, the sharp pain comes on randomly and lasts for a few minutes.
 
-Given your symptoms and that this is the first time you've experienced them, it further reinforces the concern for a potential cardiac event. Time is critical in these situations. Please seek immediate medical attention.
+Based on this information, it's difficult to pinpoint the exact cause, but sharp, random chest pain that lasts only a few minutes could be related to musculoskeletal issues (like a pulled muscle in your chest wall"
+human,no
+ai,"Okay. Since you haven't noticed any other symptoms like shortness of breath, dizziness, nausea, or sweating accompanying the pain, has the intensity or frequency of the sharp pain changed recently?
+"
+human,shortness of breath
+ai,"Okay, you're now experiencing shortness of breath in addition to the sharp chest pain. Is the shortness of breath constant, or does it come and go with the pain?
 "

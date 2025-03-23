@@ -118,20 +118,26 @@ with prompt_container:
 # if st.button("Generate Report"):
 #     display_pdf()
 
+data_placeholder = st.empty()
 
 def search_button_callback():
-    specialty = "Cardiologist"
-    city = "Atlanta"
-    df = pd.read_csv("doctor_info.csv")
-    df = df.sort_values(by="Rating", ascending=False)
-    top_doctors = df[df["Specialty"].str.contains(specialty)].head(3)
-    best_doc = top_doctors[top_doctors["City"].str.contains(city)].head(3)
-    st.write(best_doc)
+    with data_placeholder:
+        path = "other_doctors.csv"
+        specialty = st.session_state.specialty
+        city = st.session_state.current_user.location
+        df = pd.read_csv(path)
+        #df = df.sort_values(by="Rating", ascending=False)
+        s_fil_df = df[df["Specialty"].str.contains(specialty)]
+        c_fil_df = s_fil_df[s_fil_df["City"].str.contains(city)]
+        best_doc = c_fil_df.sort_values(by="Rating", ascending=False).head(3)
+        st.write(best_doc)
 
 # Search section
 search_cols = st.columns((6, 1))
 search_cols[0].markdown('<h2>Find the right doctor for you!</h2>', unsafe_allow_html=True)
 search_cols[1].button("Search", on_click=search_button_callback)
+
+
 
 # Footer
 st.markdown('<div class="footer">ReferAI - Your Health Assistant</div>', unsafe_allow_html=True)

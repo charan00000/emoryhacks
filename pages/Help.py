@@ -34,23 +34,7 @@ You can then:
 - See a list of available doctors in that area
 """)
 
-# Step 4
-st.header("4️⃣ Sort by What Matters to You")
-st.write("""
-We understand that preferences vary. That’s why you can sort doctors by:
-- **Availability**
-- **Ratings**
-- Assign priority weights (for example, rate “availability” as more important than “rating,” or vice versa).
-""")
 
-# Step 5
-st.header("5️⃣ Book and Sync Effortlessly")
-st.write("""
-Once you’ve found the right doctor and selected an appointment date:
-- We create a secure database entry
-- This is sent through our scheduling pipeline to keep both our system and the clinic’s database in sync
-- We’ll also automatically update the calendars of both you and your doctor — if calendars are linked — so no one misses a thing
-""")
 
 # Need Assistance
 st.subheader("🔎 Need Assistance?")

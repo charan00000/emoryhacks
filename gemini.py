@@ -41,10 +41,10 @@ def generate(input, history, num_responses):
         history_string += f"(sender: {message.origin}, message: {message.message}), \n"
     query += history_string
     query += f"current prompt: {input}. "
-    if num_responses > 7:
+    if num_responses > 5:
         query = "You are an ai nurse that has finished collecting data about the user's medical concern. " \
         "You should let the user know that you have finished collecting information, provide a summary of the user's medical concern, provide possible diagnoses, and provide a type of doctor specialty (general practitioner, cardiologist, oncologist, orthodontist, etc) using the given conversation history as context: "
-    if num_responses <= 7:
+    if num_responses <= 5:
         return general_model.generate_content(query).text, (), ()
     else:
         output = general_model.generate_content(query + history_string).text

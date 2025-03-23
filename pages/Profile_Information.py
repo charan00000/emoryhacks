@@ -37,8 +37,8 @@ def connect_to_db():
 
 def create_table(conn):
     c = conn.cursor()
-    #c.execute(f"DROP TABLE IF EXISTS users")
-    #conn.commit()
+    c.execute(f"DROP TABLE IF EXISTS users")
+    conn.commit()
     c.execute(
         """
         CREATE TABLE IF NOT EXISTS users (
