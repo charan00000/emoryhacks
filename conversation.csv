@@ -1,8 +1,26 @@
 Sender,Message
 human,I have a headache
+ai,"Okay, I understand you have a headache. To help me understand what might be causing it, could you tell me **where in your head you feel the pain most intensely?**
+"
 human,back right
+ai,"Okay, the pain is most intense in the back right of your head. Can you describe the nature of the pain? Is it throbbing, sharp, dull, or something else?
+"
 human,dull
+ai,"Okay, the pain in the back right of your head is dull. How long have you been experiencing this dull headache?
+"
 human,2 horus
+ai,"Okay, you've had this dull headache in the back right of your head for about 2 hours. Have you taken any medication for the headache, such as Tylenol or ibuprofen?
+"
 human,np
+ai,"Okay, you've had this dull headache in the back right of your head for about 2 hours and haven't taken any medication. Have you experienced any other symptoms along with the headache, such as nausea, dizziness, or sensitivity to light or sound?
+"
 human,no
+ai,"Okay, you've had this dull headache in the back right of your head for about 2 hours, haven't taken any medication, and aren't experiencing any other symptoms like nausea, dizziness, or sensitivity to light or sound.
+
+Considering the location and nature of your headache, it could be related to muscle tension.
+
+Has anything specific triggered the headache, such as stress, prolonged computer use, or poor posture?
+"
 human,I was playing valorant for 26 hours straigt
+ai,"Okay, you've had this dull headache in the back right of your head for about 2 hours, haven't taken any medication, aren't experiencing any other symptoms, and you were playing Valorant for 26 hours straight. Prolonged screen time and gaming can certainly contribute to headaches, potentially due to eye strain or muscle tension from posture.
+"

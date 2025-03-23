@@ -5,14 +5,15 @@ import models
 # Provided text
 def make_csv(text, upload = False):
     # Regular expression to extract sender and message pairs
-    pattern = r"\(sender: (.*?), message: (.*?)\)"
-    matches = re.findall(pattern, text)
+    pattern = r"\(sender: (.*?), message: (.*?)\)(?=,|$)"
+    matches = re.findall(pattern, text, re.DOTALL)
 
     # Convert to DataFrame
     df = pd.DataFrame(matches, columns=['Sender', 'Message'])
 
     # Save the DataFrame to a CSV file
     df.to_csv('conversation.csv', index=False)
+
 
     if upload:
         models.upload_conversation()
@@ -46,5 +47,5 @@ Has anything specific triggered the headache, such as stress, prolonged computer
 """
 
 if __name__ == '__main__':
-    make_csv(text)
+    make_csv(text, upload = False)
 
