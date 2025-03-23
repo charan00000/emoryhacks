@@ -85,7 +85,25 @@ if submitted:
 
     conn = connect_to_db()
     create_table(conn)
-    insert_user(conn, st.session_state.current_user)
+    # Check if the email already exists in the database
+    c = conn.cursor()
+    c.execute("SELECT * FROM users WHERE email = ?", (email,))
+    existing_user = c.fetchone()
+
+    if existing_user:
+        # Update the existing user's information
+        c.execute('''
+            UPDATE users
+            SET password = ?, first_name = ?, last_name = ?, dob = ?, sex = ?
+            WHERE email = ?
+        ''', (password, st.session_state.current_user.fn, st.session_state.current_user.ln, st.session_state.current_user.dob, st.session_state.current_user.sex, email))
+        st.success("Profile updated successfully!")
+    else:
+        # Insert a new user if the email does not exist
+        insert_user(conn, st.session_state.current_user)
+        st.success("Profile created successfully!")
+
+    conn.commit()
     conn.close()
     switch_page("Home")
 

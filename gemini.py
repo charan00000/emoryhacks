@@ -45,9 +45,11 @@ def generate(input, history, num_responses):
         query = "You are an ai nurse that has finished collecting data about the user's medical concern. " \
         "You should let the user know that you have finished collecting information, provide a summary of the user's medical concern, provide possible diagnoses, and provide a type of doctor specialty (general practitioner, cardiologist, oncologist, orthodontist, etc) using the given conversation history as context: "
     if num_responses <= 7:
-        return general_model.generate_content(query).text, ()
+        return general_model.generate_content(query).text, (), ()
     else:
-        return general_model.generate_content(query + history_string).text, history_string
+        output = general_model.generate_content(query + history_string).text
+        specialty = general_model.generate_content("look through your response and provide a one or two word doctor practice specialty, like General Practician, or Cardiologist. RESPONSE MUST BE ONE WORD OR TWO WORDS").text
+        return output, history_string, specialty
 
 
 if __name__ == '__main__':

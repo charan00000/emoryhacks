@@ -8,9 +8,10 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from gemini import generate
 import base64
 from conversation_formatter import make_csv
-#from PyPDF2 import PdfReader
-#from pdf2image import convert_from_path
-#from PIL import Image
+from PyPDF2 import PdfReader
+from pdf2image import convert_from_path
+from PIL import Image
+import models
 
 LOGO = "static/emory_hack_logo.png"
 
@@ -49,17 +50,21 @@ def on_click_callback():
     llm_response = generate(human_prompt, st.session_state.history, st.session_state.num_responses)
     current_response = llm_response[0]
     report_info = llm_response[1]
+    specialty = llm_response[2]
     st.session_state.num_responses += 1
     st.session_state.history.append(Message("human", human_prompt))
     st.session_state.history.append(Message("ai", current_response))
     st.session_state.human_prompt = ""
     if len(report_info) > 0:
         make_csv(report_info, upload = True)
+        print(specialty)
+        #models.search_doctors(specialty)
 
-#def display_pdf(file_path = 'conversation.pdf'):
- #   images = convert_from_path(file_path)
-  #  for image in images:
-   #     st.image(image)
+
+def display_pdf(file_path = 'conversation.pdf'):
+    images = convert_from_path(file_path)
+    for image in images:
+        st.image(image)
 
 initialize_session_state()
 
@@ -106,8 +111,8 @@ with prompt_container:
         on_click=on_click_callback
     )
 
-#if st.button("Generate Report"):
-#    display_pdf()
+if st.button("Generate Report"):
+    display_pdf()
 
 
 # Search section

@@ -428,7 +428,6 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 login, signup = st.tabs(["Login", "Sign Up"])
-
 st.markdown(
 	"""
 	<style>
@@ -461,6 +460,7 @@ st.markdown(
 	}
 </style>
 """, unsafe_allow_html=True)
+bottom = ""
 
 with login:
 
@@ -476,6 +476,7 @@ with login:
 			st.write('Login failed')
 with signup:
 	with st.form("signup-form", clear_on_submit=True, border=True) as login_form:
+		bottom = ""
 		email = st.text_input("*Email*", key="email-text2", placeholder="Email")
 		password = st.text_input("*Password*", key="password-text2", placeholder="Password")
 		verify_password = st.text_input("*Verify Password*", key="verify-password-text", placeholder="Type your password again")
@@ -485,21 +486,27 @@ with signup:
 			c = conn.cursor()
 			c.execute("SELECT * FROM users WHERE email = ?", (email,))
 			existing_user = c.fetchone()
-			if existing_user:
+			if email == "" or email == " ":
+				st.error("Email cannot be empty")
+				bottom = "Email cannot be empty"
+			elif existing_user:
 				st.error("User already exists")
+				bottom = "User already exists"
 			else:
 				#signup logic here
 				st.session_state.current_user.email = email
 				st.session_state.current_user.password = password
 				if password != verify_password:
 					st.error("Passwords do not match")
+					bottom = "Passwords do not match"
 				else:
 					st.write(email, password,)
+					bottom = "Success"
 					st.success("Signup successful!")
 					switch_page("profile information")
 bar, text, bar = st.columns(3)
-st.markdown("""
-	<h3>  </h3>
+st.markdown(f"""
+	<h3> {bottom} </h3>
 """, unsafe_allow_html=True)
 
 
