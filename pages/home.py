@@ -5,7 +5,11 @@ import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from gemini import generate
+<<<<<<< HEAD
 import models
+=======
+import base64
+>>>>>>> cbd55107fc0e015878243ac569a9d9a01fb0a37e
 
 
 st.set_page_config(page_title="ReferAI", layout="wide")
@@ -59,29 +63,41 @@ def on_click_callback():
     st.session_state.history.append(Message("human", human_prompt))
     st.session_state.history.append(Message("ai", current_response))
     st.session_state.human_prompt = ""
+<<<<<<< HEAD
     if len(report_info) > 0:
         models.update_report(report_info)
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> cbd55107fc0e015878243ac569a9d9a01fb0a37e
 
+>>>>>>> 47111f3a4286c8707fd4f557676f632ff5b261db
 
 initialize_session_state()
 
-chat_container = st.container()
+chat_container = st.container(key="chat-container")
 prompt_container = st.form("chat-form")
 credit_card_placeholder = st.empty()
 
 with chat_container:
     for message in st.session_state.history:
-        img = ":material/person:" if message.origin == "human" else ":material/"
+        img_path = (
+        "static/person_icon_emory_hacks.png"
+        if message.origin == "human"
+        else
+        "static/robot_icon_emory_hacks.png"
+        )    
         rev = '' if message.origin == "ai" else 'row-reverse'
+        ai_human_bubble = (   
+            'ai-bubble' 
+            if message.origin == 'ai' 
+            else 
+            'human-bubble'
+        )
         div = f"""
             <div class="chat-row {rev}">
-            <img src={
-                "static/person_icon_emory_hacks.png"
-                if message.origin == "human"
-                else
-                "static/robot_icon_emory_hacks.png"
-            }>
-                <div>{message.message}</div>
+            <img src="data:image/png;base64,{base64.b64encode(open(img_path, 'rb').read()).decode()}" width="32" height="32">
+                <div class="chat-bubble {ai_human_bubble}">{message.message}</div>
             </div>
         """
         st.markdown(div, unsafe_allow_html= True)
