@@ -112,22 +112,16 @@ credit_card_placeholder = st.empty()
 
 with chat_container:
     for message in st.session_state.history:
-        img = "static/person_icon_emory_hacks.png"
+        img = ":material/person:" if message.origin == "human" else ":material/"
+        rev = '' if message.origin == "ai" else 'row-reverse'
         div = f"""
-            <div class="chat-row 
-            {
-                'row-reverse'
-                if message.origin == 'human'
+            <div class="chat-row {rev}">
+            <img src={
+                ":material/person:"
+                if message.origin == "human"
                 else
-                ''
-            }">
-            <img src="static/{
-                    'person_icon_emory_hacks.png'
-                    if message.origin == 'human'
-                    else
-                    'robot_icon_emory_hacks.png'
-                }"
-                width=32 height=32>
+                ":material/smart_toy:"
+            }>
                 <div>{message.message}</div>
             </div>
         """
