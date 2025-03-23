@@ -45,9 +45,9 @@ def generate(input, history, num_responses):
         query = "You are an ai nurse that has finished collecting data about the user's medical concern. " \
         "You should let the user know that you have finished collecting information and provide a summary of the user's medical concern using the given conversation history as context: "
     if num_responses <= 7:
-        return general_model.generate_content(query).text
+        return general_model.generate_content(query).text, ()
     else:
-        return general_model.generate_content(query + history_string).text
+        return general_model.generate_content(query + history_string).text, history_string
 
 
 if __name__ == '__main__':
