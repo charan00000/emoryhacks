@@ -463,6 +463,7 @@ with login:
 			#login logic here
 			st.write(email, password,)
 			st.success("Login successful!")
+			switch_page("Home")
 with signup:
 	with st.form("signup-form", clear_on_submit=True, border=True) as login_form:
 		email = st.text_input("*Email*", key="email-text2", placeholder="Email")
@@ -475,7 +476,7 @@ with signup:
 			st.session_state.current_user.password = password
 			st.write(email, password,)
 			st.success("Signup successful!")
-			switch_page("Personal_Information.py")
+			switch_page("profile information")
 bar, text, bar = st.columns(3)
 st.markdown("""
 	<h3>- OR -</h3>

@@ -2,6 +2,7 @@ import streamlit as st
 import datetime
 from dataclasses import dataclass
 import sqlite3
+from streamlit_extras.switch_page_button import switch_page
 
 LOGO = "static/emory_hack_logo.png"
 
@@ -43,6 +44,8 @@ def create_table(conn):
             first_name TEXT,
             last_name TEXT,
             dob TEXT,
+            sex TEXT
+        )
         """
     )
     conn.commit()
@@ -50,7 +53,7 @@ def create_table(conn):
 def insert_user(conn, user_data):
     c = conn.cursor()
     c.execute('''
-        INSERT INTO users (email, password, fn, ln, dob, sex)
+        INSERT INTO users (email, password, first_name, last_name, dob, sex)
         VALUES (?, ?, ?, ?, ?, ?)
     ''', (user_data.email, user_data.password, user_data.fn, user_data.ln, user_data.dob, user_data.sex))
     conn.commit()
@@ -84,5 +87,6 @@ if submitted:
     create_table(conn)
     insert_user(conn, st.session_state.current_user)
     conn.close()
+    switch_page("Home")
 
     # st.write(st.session_state.current_user)
