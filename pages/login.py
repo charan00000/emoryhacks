@@ -1,17 +1,64 @@
 import streamlit as st
-
+st.set_page_config( layout="wide")
 def load_css():
     with open("static/style.css") as css:
         st.markdown(f"<style>{css.read()}</style>", unsafe_allow_html=True)
 
 load_css()
 
+
+
 st.markdown(
     """
 <style>
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+  
+  
+  .poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .poppins-semibold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  .poppins-bold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  .poppins-black {
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+  }
+
+  
+  .poppins-regular-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  
+  .poppins-bold-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+
+
 * {
 	box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
 }
 
 body {
@@ -21,7 +68,7 @@ body {
 	align-items: center;
 	flex-direction: column;
 	height: 100vh;
-	margin: -20px 0 50px;
+
 }
 
 h1 {
@@ -54,8 +101,8 @@ a {
 
 button {
 	border-radius: 20px;
-	border: 1px solid #FF4B2B;
-	background-color: #FF4B2B;
+	border: 1px solid #274C77;
+	background-color: #274C77;
 	color: #FFFFFF;
 	font-size: 12px;
 	font-weight: bold;
@@ -98,11 +145,11 @@ input {
 }
 
 .container {
-	background-color: #fff;
+	background-color: #274C77;
 	border-radius: 10px;
   	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
 			0 10px 10px rgba(0,0,0,0.22);
-	position: relative;
+	position: absolute;
 	overflow: hidden;
 	width: 768px;
 	max-width: 100%;
@@ -168,9 +215,7 @@ input {
 }
 
 .overlay {
-	background: #FF416C;
-	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
-	background: linear-gradient(to right, #FF4B2B, #FF416C);
+	background: #274C77;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;
@@ -233,85 +278,188 @@ input {
 	height: 40px;
 	width: 40px;
 }
-
-footer {
-    background-color: #222;
-    color: #fff;
-    font-size: 14px;
-    bottom: 0;
-    position: fixed;
-    left: 0;
-    right: 0;
-    text-align: center;
-    z-index: 999;
-}
-
-footer p {
-    margin: 10px 0;
-}
-
-footer i {
-    color: red;
-}
-
-footer a {
-    color: #3c97bf;
-    text-decoration: none;
-}     
 </style>
     """,
     unsafe_allow_html=True,
 )
+# st.markdown(
+#     """
+# <div class="container poppins-regular" id="container">
+# 	<div class="form-container sign-up-container">
+# 		<form action="#">
+# 			<h1>Create Account</h1>
+# 			<div class="social-container">
+# 				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+# 				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+# 				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+# 			</div>
+# 			<span>or use your email for registration</span>
+# 			<input type="text" placeholder="Name" />
+# 			<input type="email" placeholder="Email" />
+# 			<input type="password" placeholder="Password" />
+# 			<button>Sign Up</button>
+# 		</form>
+# 	</div>
+# 	<div class="form-container sign-in-container">
+# 		<form action="#">
+# 			<h1>Sign in</h1>
+# 			<div class="social-container">
+# 				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+# 				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+# 				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+# 			</div>
+# 			<span>or use your account</span>
+# 			<input type="email" placeholder="Email" />
+# 			<input type="password" placeholder="Password" />
+# 			<a href="#">Forgot your password?</a>
+# 			<button>Sign In</button>
+# 		</form>
+# 	</div>
+# 	<div class="overlay-container">
+# 		<div class="overlay">
+# 			<div class="overlay-panel overlay-left">
+# 				<h1>Welcome Back!</h1>
+# 				<p>To keep connected with us please login with your personal info</p>
+# 				<button class="ghost" id="signIn">Sign In</button>
+# 			</div>
+# 			<div class="overlay-panel overlay-right">
+# 				<h1>Hello, Friend!</h1>
+# 				<p>Enter your personal details and start journey with us</p>
+# 				<button class="ghost" id="signUp">Sign Up</button>
+# 			</div>
+# 		</div>
+# 	</div>
+# </div>
+#     """,
+#     unsafe_allow_html=True,
+# )
+
+st.markdown("""
+    <style>
+        <style>
+        /* Set the background color for the entire page */
+        body {
+            background-color: #f6f5f7;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Style the form container */
+        .stContainer {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        }
+
+        /* Style the circular social buttons */
+        .social-button {
+            border: 1px solid #DDDDDD;
+            border-radius: 50%;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 10px;
+            height: 50px;
+            width: 50px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .social-button:hover {
+            transform: scale(1.1);
+        }
+
+        .google-button {
+            background-color: #4285F4;
+            color: white;
+        }
+
+        .microsoft-button {
+            background-color: #00A4EF;
+            color: white;
+        }
+
+        .google-button i, .microsoft-button i {
+            font-size: 24px;
+        }
+
+        footer {
+            background-color: #222;
+            color: #fff;
+            font-size: 14px;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer a {
+            color: #3c97bf;
+            text-decoration: none;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
+login, signup = st.tabs(["Login", "Sign Up"])
 
 st.markdown(
-    """
-<div class="container poppins-bold" id="container">
-	<div class="form-container sign-up-container">
-		<form action="#">
-			<h1>Create Account</h1>
-			<div class="social-container">
-				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-			</div>
-			<span>or use your email for registration</span>
-			<input type="text" placeholder="Name" />
-			<input type="email" placeholder="Email" />
-			<input type="password" placeholder="Password" />
-			<button>Sign Up</button>
-		</form>
-	</div>
-	<div class="form-container sign-in-container">
-		<form action="#">
-			<h1>Sign in</h1>
-			<div class="social-container">
-				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-			</div>
-			<span>or use your account</span>
-			<input type="email" placeholder="Email" />
-			<input type="password" placeholder="Password" />
-			<a href="#">Forgot your password?</a>
-			<button>Sign In</button>
-		</form>
-	</div>
-	<div class="overlay-container">
-		<div class="overlay">
-			<div class="overlay-panel overlay-left">
-				<h1>Welcome Back!</h1>
-				<p>To keep connected with us please login with your personal info</p>
-				<button class="ghost" id="signIn">Sign In</button>
-			</div>
-			<div class="overlay-panel overlay-right">
-				<h1>Hello, Friend!</h1>
-				<p>Enter your personal details and start journey with us</p>
-				<button class="ghost" id="signUp">Sign Up</button>
-			</div>
-		</div>
-	</div>
-</div>
-    """,
-    unsafe_allow_html=True,
-)
+	"""
+	<style>
+
+	
+	[data-testid="stForm"] {
+    	background-color: #274C77;
+		box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			0 10px 10px rgba(0,0,0,0.22);
+	}	
+
+	[data-testid="stBaseButton-secondaryFormSubmit"] {
+    	background-color: #F8F9FA;
+	}	
+	.st-af {
+    	font-size:24px;
+	}	
+
+	em {
+		color: #F8F9FA;
+	}
+	strong {
+		color: #274C77;
+	}
+
+	h3 {
+	    text-align: center;
+	    color: #274C77;
+		
+	}
+</style>
+""", unsafe_allow_html=True)
+
+with login:
+
+	with st.form("login-form", clear_on_submit=True, border=True) as login_form:
+		email = st.text_input("*Email*", key="email-text")
+		password = st.text_input("*Password*", key="password-text")
+		submitted = st.form_submit_button("**Login**",type="secondary")
+		if submitted:
+			#login logic here
+			st.write(email, password,)
+			st.success("Login successful!")
+with signup:
+	with st.form("signup-form", clear_on_submit=True, border=True) as login_form:
+		email = st.text_input("*Email*", key="email-text2", placeholder="Email")
+		password = st.text_input("*Password*", key="password-text2", placeholder="Password")
+		verify_password = st.text_input("*Verify Password*", key="verify-password-text", placeholder="Type your password again")
+		submitted = st.form_submit_button("**Login**",type="secondary")
+		if submitted:
+			#signup logic here
+			st.write(email, password,)
+			st.success("Signup successful!")
+bar, text, bar = st.columns(3)
+st.markdown("""
+	<h3>- OR -</h3>
+""", unsafe_allow_html=True)
+
+
 
