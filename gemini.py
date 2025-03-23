@@ -38,16 +38,16 @@ def generate(input, history, num_responses):
         query += "in addition to asking a question, you may provide insight into the possible medical condition based on and only on the following conversation history. "
     query += "Here is the context conversation history so far:"
     for message in history:
-        history_string += f"(sender: {message.origin}, message: {message.message}), "
+        history_string += f"(sender: {message.origin}, message: {message.message}), \n"
     query += history_string
     query += f"current prompt: {input}. "
     if num_responses > 7:
         query = "You are an ai nurse that has finished collecting data about the user's medical concern. " \
         "You should let the user know that you have finished collecting information and provide a summary of the user's medical concern using the given conversation history as context: "
     if num_responses <= 7:
-        return general_model.generate_content(query).text
+        return general_model.generate_content(query).text, ()
     else:
-        return general_model.generate_content(query + history_string).text
+        return general_model.generate_content(query + history_string).text, history_string
 
 
 if __name__ == '__main__':

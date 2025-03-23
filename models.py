@@ -2,6 +2,7 @@ import pandas as pd
 import boto3
 import os
 from dotenv import load_dotenv
+import report_div_maker
 load_dotenv('keys/.env')
 args = ('Doctor Name', 'Address', 'Location (city, state)', 'Practicing Specialty', 'Calendar Link')
 
@@ -34,9 +35,16 @@ def upload_doc_file(file = 'doctor_info.csv', bucket = 'emoryhacksdoctors'):
 
 def add_doctor(args):
     athena_client = boto3.client('athena')
-    
+
+
+
+def update_report(question_answer_string):
+    print(question_answer_string)
+    divved_string = report_div_maker.wrap_messages_in_divs(question_answer_string)
+    print(divved_string)
 
 if __name__ == '__main__':
-    initialize()
+    #initialize()
+    update_report("A")
 
 
