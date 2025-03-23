@@ -1,6 +1,7 @@
 import re
 import pandas as pd
 import models
+import conversation
 
 # Provided text
 def make_csv(text, upload = False):
@@ -14,6 +15,7 @@ def make_csv(text, upload = False):
     # Save the DataFrame to a CSV file
     df.to_csv('conversation.csv', index=False)
 
+    conversation.generate_html(csv_path = 'conversation.csv')
 
     if upload:
         models.upload_conversation()
