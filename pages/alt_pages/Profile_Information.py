@@ -13,6 +13,8 @@ st.title("Additional information")
 
 @dataclass
 class Person:
+    email: str
+    password: str
     fn: str
     ln: str
     dob: str
@@ -20,7 +22,9 @@ class Person:
 
 def initialize_session_state():
     if "current_user" not in st.session_state:
-        st.session_state.current_user = Person() 
+        st.session_state.current_user = Person("", "", "", "", "", "") 
+
+initialize_session_state()
 
 with st.form("profile-info-form") as prof_info_form:
     fn = st.text_input("Legal First Name", placeholder='Enter legal full name')
@@ -40,7 +44,9 @@ with placeholder_add_input.container():
         sex = st.text_input("Other Sex", placeholder="Enter other sex") 
     
 if submitted:
+    email = st.session_state.current_user.email
+    password = st.session_state.current_user.password
     st.session_state.current_user = Person(
-        fn, ln, dob.strftime("%m/%d/%Y"), sex.removeprefix(":blue[").removeprefix(":violet[").removesuffix("]")
+        email, password, fn, ln, dob.strftime("%m/%d/%Y"), sex.removeprefix(":blue[").removeprefix(":violet[").removesuffix("]")
     )
-    st.write("user: ", st.session_state.current_user)
+    # st.write(st.session_state.current_user)
