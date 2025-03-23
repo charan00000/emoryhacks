@@ -55,7 +55,6 @@ He’s the team’s resident ‘big thinker,’ always looking at how technology
 
 st.markdown("---")
 st.write("Together, we are **ReferAI** — using smart technology to make smarter healthcare connections.")
-st.write("👉 Want to connect with us? Reach out through the **Connect With Us** page!")
 
 
 

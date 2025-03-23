@@ -1,6 +1,101 @@
-,Doctor Name,Address,Location,Practicing Specialty,Calendar Link
-0,Dr. Jane Doe,000 xxx,"New York, NY",Oncology,https://www.zocdoc.com/drjanedoe
-1,Dr. David Lee,000 xxx xxx,"Chicago, IL",Gastroenterology,https://www.zocdoc.com/drdavidlee
-2,Dr. Sophia Patel,000 xxx xxx,"Los Angeles, CA",Psychiatry,https://www.zocdoc.com/drsophiapatel
-3,Dr. Ethan Kim,0000 Cexxxdar xxx,"Houston, TX",Urology,https://www.zocdoc.com/drethankim
-4,Dr. Olivia Martin,000 xxx xxx,"Seattle, WA",Endocrinology,https://www.zocdoc.com/droliviamartin
+Doctor Name,Specialty,City,State,Rating
+Dr. Sophia Powell,ENT Specialist,Athens,GA,3.85
+Dr. Melissa White,General Practitioner,Albany,GA,4.06
+Dr. William Simmons,Allergist,Atlanta,GA,4.38
+Dr. Victoria Bennett,Neurologist,Savannah,GA,3.74
+Dr. Alex Hughes,Allergist,Peachtree City,GA,4.17
+Dr. Ashley Hayes,Orthopedic Surgeon,Athens,GA,4.76
+Dr. Andrea Riley,General Practitioner,Sandy Springs,GA,4.65
+Dr. Nicole Baker,Cardiologist,Dunwoody,GA,4.77
+Dr. Michael Rivera,Allergist,Atlanta,GA,4.44
+Dr. Sophia Hayes,Orthopedic Surgeon,Alpharetta,GA,3.74
+Dr. Samuel Rivera,Rheumatologist,Roswell,GA,3.76
+Dr. Eric Kelly,Nephrologist,Marietta,GA,4.17
+Dr. Eric Spencer,Nephrologist,Newnan,GA,3.87
+Dr. Derek Allen,Pulmonologist,Atlanta,GA,3.97
+Dr. Brittany Sanders,Oncologist,Macon,GA,4.07
+Dr. Steven Stone,Endocrinologist,Atlanta,GA,4.91
+Dr. Steven Sanders,Pediatrician,Dunwoody,GA,3.54
+Dr. Chloe Russell,Pulmonologist,Augusta,GA,4.93
+Dr. Samuel Ward,Allergist,Newnan,GA,4.01
+Dr. David Moore,Orthopedic Surgeon,Augusta,GA,4.37
+Dr. Victor Wright,Endocrinologist,Johns Creek,GA,4.49
+Dr. Melissa Elliott,ENT Specialist,Columbus,GA,3.59
+Dr. Ethan Murphy,Oncologist,Newnan,GA,4.19
+Dr. Megan Ward,ENT Specialist,Augusta,GA,4.49
+Dr. Julia Bennett,Orthopedic Surgeon,Atlanta,GA,3.72
+Dr. Laura Powell,Rheumatologist,Atlanta,GA,3.57
+Dr. Derek Russell,Dermatologist,Sandy Springs,GA,3.84
+Dr. Rachel Scott,Pediatrician,Savannah,GA,4.79
+Dr. Victoria Moore,ENT Specialist,Roswell,GA,4.74
+Dr. Derek Sanders,ENT Specialist,Atlanta,GA,4.96
+Dr. Ashley Turner,Pediatrician,Newnan,GA,4.76
+Dr. Grace Gray,Rheumatologist,Newnan,GA,4.25
+Dr. Ethan Powell,Allergist,Alpharetta,GA,4.5
+Dr. Ethan Baker,Allergist,Johns Creek,GA,4.1
+Dr. Lisa Stone,ENT Specialist,Columbus,GA,3.62
+Dr. Laura Torres,Endocrinologist,Sandy Springs,GA,4.03
+Dr. Victoria Kelly,Endocrinologist,Atlanta,GA,4.79
+Dr. Laura Adams,Neurologist,Atlanta,GA,3.75
+Dr. Hannah Carter,Nephrologist,Johns Creek,GA,4.36
+Dr. Kevin Elliott,ENT Specialist,Warner Robins,GA,4.79
+Dr. Chris Brooks,Orthopedic Surgeon,Sandy Springs,GA,4.83
+Dr. Rachel Simmons,General Practitioner,Macon,GA,3.95
+Dr. David Moore,Ophthalmologist,Atlanta,GA,4.59
+Dr. Ryan White,General Practitioner,Dunwoody,GA,4.72
+Dr. Benjamin Thomas,Oncologist,Columbus,GA,3.52
+Dr. Grace Bennett,Nephrologist,Atlanta,GA,4.87
+Dr. Marcus Parker,Endocrinologist,Atlanta,GA,4.75
+Dr. Matthew Russell,Nephrologist,Marietta,GA,4.31
+Dr. Megan Foster,Gastroenterologist,Gainesville,GA,4.87
+Dr. Sophia Foster,Gastroenterologist,Columbus,GA,3.64
+Dr. Benjamin Ortiz,Rheumatologist,Dunwoody,GA,3.85
+Dr. Jessica Sanders,ENT Specialist,Atlanta,GA,4.41
+Dr. Samuel Baker,Pulmonologist,Athens,GA,4.07
+Dr. Jessica Torres,Pediatrician,Atlanta,GA,3.86
+Dr. Julia Carter,Gastroenterologist,Savannah,GA,4.6
+Dr. Molly Harris,Pediatrician,Atlanta,GA,4.07
+Dr. Chloe Carter,Rheumatologist,Atlanta,GA,4.25
+Dr. Lindsay Turner,Nephrologist,Macon,GA,3.57
+Dr. Lindsay Brown,General Practitioner,Athens,GA,4.85
+Dr. Brian Murphy,Neurologist,Savannah,GA,4.37
+Dr. Rachel Hayes,Cardiologist,Columbus,GA,4.33
+Dr. Victor Carter,Oncologist,Atlanta,GA,3.66
+Dr. Paige Diaz,Oncologist,Atlanta,GA,4.35
+Dr. Sarah Hayes,ENT Specialist,Athens,GA,4.69
+Dr. Ethan Gardner,Nephrologist,Roswell,GA,4.43
+Dr. Sarah Brooks,Neurologist,Atlanta,GA,4.69
+Dr. Chris Fields,Orthopedic Surgeon,Gainesville,GA,3.78
+Dr. Lisa Ross,Orthopedic Surgeon,Athens,GA,4.32
+Dr. William Brooks,ENT Specialist,Savannah,GA,4.84
+Dr. Chloe Gardner,Dermatologist,Augusta,GA,4.51
+Dr. William Fields,Allergist,Albany,GA,3.94
+Dr. Peter Baker,General Practitioner,Rome,GA,3.55
+Dr. Zoe Russell,Gastroenterologist,Atlanta,GA,4.44
+Dr. Chris Murphy,Ophthalmologist,Atlanta,GA,4.93
+Dr. Lisa Torres,Oncologist,Athens,GA,3.65
+Dr. Lindsay Turner,Rheumatologist,Sandy Springs,GA,3.83
+Dr. Nicole Kim,Allergist,Warner Robins,GA,3.69
+Dr. Victoria Ortiz,Orthopedic Surgeon,Johns Creek,GA,3.52
+Dr. Derek Kelly,Cardiologist,Atlanta,GA,3.67
+Dr. Ashley Edwards,Endocrinologist,Peachtree City,GA,4.62
+Dr. Brandon Simmons,Rheumatologist,Marietta,GA,4.32
+Dr. Eric Long,Orthopedic Surgeon,Roswell,GA,4.66
+Dr. Brittany Thomas,ENT Specialist,Marietta,GA,4.95
+Dr. Melissa Green,Oncologist,Augusta,GA,3.74
+Dr. Molly Kim,Oncologist,Atlanta,GA,3.58
+Dr. Matthew Turner,ENT Specialist,Warner Robins,GA,4.24
+Dr. Paige Ross,Pulmonologist,Columbus,GA,4.91
+Dr. Matthew Foster,Gastroenterologist,Columbus,GA,3.65
+Dr. Nicole Torres,Oncologist,Savannah,GA,4.55
+Dr. Grace Powell,Allergist,Atlanta,GA,4.51
+Dr. Paige Elliott,Gastroenterologist,Athens,GA,3.58
+Dr. Brittany Spencer,Pulmonologist,Peachtree City,GA,3.75
+Dr. Paige Murphy,General Practitioner,Sandy Springs,GA,3.73
+Dr. Adam Murphy,Oncologist,Augusta,GA,3.7
+Dr. Matthew Foster,Neurologist,Atlanta,GA,3.56
+Dr. Victor Hughes,Orthopedic Surgeon,Roswell,GA,4.35
+Dr. Steven Hughes,General Practitioner,Sandy Springs,GA,3.93
+Dr. Grace Brown,Gastroenterologist,Athens,GA,4.93
+Dr. Olivia Hall,ENT Specialist,Columbus,GA,4.19
+Dr. Olivia Russell,General Practitioner,Athens,GA,3.96

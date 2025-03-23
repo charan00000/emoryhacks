@@ -105,7 +105,7 @@ with signup:
 					switch_page("profile information")
 bar, text, bar = st.columns(3)
 st.markdown(f"""
-	<h3> {bottom} </h3>
+	<h3>  </h3>
 """, unsafe_allow_html=True)
 
 
