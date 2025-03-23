@@ -1,21 +1,27 @@
 import re
+import pandas as pd
+import models
+import conversation
+from weasyprint import HTML 
 
-def wrap_messages_in_divs(text):
-    # Split the text into messages
-    messages = re.split(r'\),\s*\(', text)
-    
-    # Remove any leading or trailing parentheses
-    messages = [message.strip().strip('()') for message in messages]
-    
-    # Wrap each message in a div
-    wrapped_messages = [f'<div class="message">{message}</div>' for message in messages if message]
-    
-    # Join the wrapped messages back into a string
-    wrapped_text = '\n'.join(wrapped_messages)
-    
-    return wrapped_text
 
-# Example text
+def make_csv(text, upload = False):
+    # Regular expression to extract sender and message pairs
+    pattern = r"\(sender: (.*?), message: (.*?)\)(?=,|$)"
+    matches = re.findall(pattern, text, re.DOTALL)
+
+    # Convert to DataFrame
+    df = pd.DataFrame(matches, columns=['Sender', 'Message'])
+
+    # Save the DataFrame to a CSV file
+    df.to_csv('conversation.csv', index=False)
+
+    conversation.generate_html(csv_path = 'conversation.csv')
+
+    if upload:
+        models.upload_conversation()
+
+
 text = """
 (sender: human, message: I have a headache), 
 (sender: ai, message: Okay, I understand you have a headache. To help me understand what might be causing it, could you tell me **where in your head you feel the pain most intensely?**
@@ -44,8 +50,6 @@ Has anything specific triggered the headache, such as stress, prolonged computer
 ), 
 """
 
-# Wrap messages in divs
 if __name__ == '__main__':
-    wrapped_text = wrap_messages_in_divs(text)
-    print(wrapped_text)
-# Print the result
+    make_csv(text, upload = False)
+
