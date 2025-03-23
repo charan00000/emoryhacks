@@ -41,10 +41,23 @@ def upload_conversation(file = 'conversation.csv', bucket = 'emoryhacksconversat
 def add_doctor(args):
     athena_client = boto3.client('athena')
 
-
+def search_doctors(specialty):
+    athena_client = boto3.client('athena')
+    query = f"SELECT * FROM doctor_info WHERE Practicing Specialty = {specialty}"
+    response = athena_client.start_query_execution(
+        QueryString=query,
+        QueryExecutionContext={
+            'Database': 'emoryhacks'
+        },
+        ResultConfiguration={
+            'OutputLocation': 's3://emoryhacksdoctors'
+        }
+    )
+    return response
 
 
 if __name__ == '__main__':
-    initialize()
+    #initialize()
+    search_doctors('Oncology')
 
 
