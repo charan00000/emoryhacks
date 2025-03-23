@@ -31,12 +31,12 @@ def initialize(upload = True):
 def upload_doc_file(file = 'doctor_info.csv', bucket = 'emoryhacksdoctors'):
     s3 = boto3.client('s3')
     s3.upload_file(file, bucket, file)
-    print('uploaded to ' + bucket)
+    print('doc file uploaded to ' + bucket)
 
 def upload_conversation(file = 'conversation.csv', bucket = 'emoryhacksconversation'):
     s3 = boto3.client('s3')
     s3.upload_file(file, bucket, file)
-    print('uploaded to ' + bucket)
+    print('convo csv uploaded to ' + bucket)
 
 def add_doctor(args):
     athena_client = boto3.client('athena')

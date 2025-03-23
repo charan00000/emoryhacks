@@ -1,4 +1,5 @@
 import pandas as pd
+from weasyprint import HTML
 
 def generate_html(csv_path = 'conversation.csv'):
     df = pd.read_csv('conversation.csv')
@@ -55,3 +56,12 @@ def generate_html(csv_path = 'conversation.csv'):
         file.write(html_template)
 
     print('conversation.html saved successfully.')
+    html_to_pdf(html_path='conversation.html', output_path='conversation.pdf')
+
+def html_to_pdf(html_path = "conversation.html", output_path = "conversation.pdf"):
+    HTML(html_path).write_pdf(output_path)
+    print('pdf report generated in ' + output_path)
+
+if __name__ == '__main__':
+    generate_html()
+    html_to_pdf()
