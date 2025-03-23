@@ -43,7 +43,7 @@ def generate(input, history, num_responses):
     query += f"current prompt: {input}. "
     if num_responses > 7:
         query = "You are an ai nurse that has finished collecting data about the user's medical concern. " \
-        "You should let the user know that you have finished collecting information and provide a summary of the user's medical concern using the given conversation history as context: "
+        "You should let the user know that you have finished collecting information, provide a summary of the user's medical concern, provide possible diagnoses, and provide a type of doctor specialty (general practitioner, cardiologist, oncologist, orthodontist, etc) using the given conversation history as context: "
     if num_responses <= 7:
         return general_model.generate_content(query).text, ()
     else:
