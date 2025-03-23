@@ -17,8 +17,8 @@ def make_csv(text, upload = False):
 
     conversation.generate_html(csv_path = 'conversation.csv')
 
-    if upload:
-        models.upload_conversation()
+    #if upload:
+     #   models.upload_conversation()
 
 
 text = """

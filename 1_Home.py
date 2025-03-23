@@ -12,6 +12,7 @@ from PyPDF2 import PdfReader
 from pdf2image import convert_from_path
 from PIL import Image
 import models
+import pandas as pd
 
 LOGO = "static/emory_hack_logo.png"
 
@@ -44,6 +45,8 @@ def initialize_session_state():
         st.session_state.history = []
     if "num_responses" not in st.session_state:
         st.session_state.num_responses = 0
+    if "specialty" not in st.session_state:
+        st.session_state.specialty = ""
     
 def on_click_callback():
     human_prompt = st.session_state.human_prompt
@@ -55,6 +58,7 @@ def on_click_callback():
     st.session_state.history.append(Message("human", human_prompt))
     st.session_state.history.append(Message("ai", current_response))
     st.session_state.human_prompt = ""
+    st.session_state.specialty = specialty
     if len(report_info) > 0:
         make_csv(report_info, upload = True)
         print(specialty)
@@ -111,14 +115,23 @@ with prompt_container:
         on_click=on_click_callback
     )
 
-if st.button("Generate Report"):
-    display_pdf()
+# if st.button("Generate Report"):
+#     display_pdf()
 
+
+def search_button_callback():
+    specialty = "Cardiologist"
+    city = "Atlanta"
+    df = pd.read_csv("doctor_info.csv")
+    df = df.sort_values(by="Rating", ascending=False)
+    top_doctors = df[df["Specialty"].str.contains(specialty)].head(3)
+    best_doc = top_doctors[top_doctors["City"].str.contains(city)].head(3)
+    st.write(best_doc)
 
 # Search section
 search_cols = st.columns((6, 1))
 search_cols[0].markdown('<h2>Find the right doctor for you!</h2>', unsafe_allow_html=True)
-search_cols[1].button("Search")
+search_cols[1].button("Search", on_click=search_button_callback)
 
 # Footer
 st.markdown('<div class="footer">ReferAI - Your Health Assistant</div>', unsafe_allow_html=True)
