@@ -3,4 +3,7 @@ primaryColor="#274C77"
 backgroundColor="#F8F9FA"
 secondaryBackgroundColor="#F0F2F6"
 textColor="#274C77"
-font="sans sarif"
+font="sans serif"
+
+[server]
+enableStaticServing = true

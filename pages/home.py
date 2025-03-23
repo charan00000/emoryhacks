@@ -1,14 +1,19 @@
 import streamlit as st
 from dataclasses import dataclass
 from typing import Literal
-from ..gemeni import generate
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from gemeni import generate
 
 
 st.set_page_config(page_title="ReferAI", layout="wide")
 
-with open("statics/style.css") as css:
-    st.markdown(f"<style>{css.read()}</style>", unsafe_allow_html=True)
+def load_css():
+    with open("static/style.css") as css:
+        st.markdown(f"<style>{css.read()}</style>", unsafe_allow_html=True)
 
+load_css()
 
 
 # Header
@@ -98,7 +103,6 @@ def on_click_callback():
     llm_response = generate(human_prompt, st.session_state.history)
     st.session_state.history.append(Message("human", human_prompt))
     st.session_state.history.append(Message("ai", llm_response))
-    # st.session_state.history.append(human_prompt)
 
 initialize_session_state()
 
@@ -107,8 +111,27 @@ prompt_container = st.form("chat-form")
 credit_card_placeholder = st.empty()
 
 with chat_container:
-    for chat in st.session_state.history:
-        st.markdown(f'From {chat.origin}: {chat.message}')
+    for message in st.session_state.history:
+        img = "static/person_icon_emory_hacks.png"
+        div = f"""
+            <div class="chat-row 
+            {
+                'row-reverse'
+                if message.origin == 'human'
+                else
+                ''
+            }">
+            <img src="static/{
+                    'person_icon_emory_hacks.png'
+                    if message.origin == 'human'
+                    else
+                    'robot_icon_emory_hacks.png'
+                }"
+                width=32 height=32>
+                <div>{message.message}</div>
+            </div>
+        """
+        st.markdown(div, unsafe_allow_html= True)
 
 with prompt_container:
     st.markdown("**ReferAI Medical Assistant** - _press Enter to send a message_")
