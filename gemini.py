@@ -37,5 +37,5 @@ def generate(input, history):
     return response.text
 
 
-if __name__ == 'main':
+if __name__ == '__main__':
     print(generate("I have a headache"))
