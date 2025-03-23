@@ -9,64 +9,14 @@ from gemini import generate
 
 st.set_page_config(page_title="ReferAI", layout="wide")
 
-def load_css():
-    with open("static/style.css") as css:
-        st.markdown(f"<style>{css.read()}</style>", unsafe_allow_html=True)
+with open("static/style.css") as css:
+    st.markdown(f"<style>{css.read()}</style>", unsafe_allow_html=True)
 
-load_css()
 
 
 # Header
 st.markdown(
     """
-    <style>
-        .header {
-            background-color: #2D4871;
-            padding: 15px;
-            color: white;
-            font-size: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .header a {
-            color: white;
-            margin: 0 10px;
-            text-decoration: none;
-        }
-        .header-buttons {
-            display: flex;
-        }
-        .chat-container {
-            background-color: #2D4871;
-            padding: 20px;
-            border-radius: 10px;
-            color: white;
-        }
-        .chat-bubble {
-            background-color: #8796c2;
-            padding: 15px;
-            border-radius: 10px;
-            display: inline-block;
-            max-width: 80%;
-        }
-        .chat-bubble-user {
-            background-color: #b8a5db;
-            text-align: right;
-        }
-        .search-bar {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-        .footer {
-            background-color: #2D4871;
-            padding: 20px;
-            color: white;
-            text-align: center;
-        }
-    </style>
     <div class="header">
         <div><strong>ReferAI</strong></div>
         <div>
@@ -117,10 +67,10 @@ with chat_container:
         div = f"""
             <div class="chat-row {rev}">
             <img src={
-                ":material/person:"
+                "static/person_icon_emory_hacks.png"
                 if message.origin == "human"
                 else
-                ":material/smart_toy:"
+                "static/robot_icon_emory_hacks.png"
             }>
                 <div>{message.message}</div>
             </div>
@@ -132,7 +82,7 @@ with prompt_container:
     cols = st.columns((6, 1))
     cols[0].text_input(
         "Chat",
-        placeholder='Symtoms, condtions, help...',
+        placeholder='Symptoms, conditions, help...',
         label_visibility='collapsed',
         key='human_prompt'
     )
@@ -148,7 +98,6 @@ with prompt_container:
 
 # Search section
 st.markdown('<h2>Find the right doctor for you!</h2>', unsafe_allow_html=True)
-search_query = st.text_input("Search for a doctor", key="search")
 st.button("Search")
 
 # Footer
