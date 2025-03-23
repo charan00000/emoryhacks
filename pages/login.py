@@ -1,4 +1,8 @@
 import streamlit as st
+import sqlite3
+from streamlit_extras.switch_page_button import switch_page
+from dataclasses import dataclass
+
 st.set_page_config( layout="wide")
 def load_css():
     with open("static/style.css") as css:
@@ -6,7 +10,20 @@ def load_css():
 
 load_css()
 
+@dataclass
+class Person:
+	email: str
+	password: str
+	fn: str
+	ln: str	
+	dob: str
+	sex: str
 
+def initialize_session_state():
+	if "current_user" not in st.session_state:
+		st.session_state.current_user = Person("", "", "", "", "", "")
+
+initialize_session_state()
 
 st.markdown(
     """
@@ -454,8 +471,11 @@ with signup:
 		submitted = st.form_submit_button("**Login**",type="secondary")
 		if submitted:
 			#signup logic here
+			st.session_state.current_user.email = email
+			st.session_state.current_user.password = password
 			st.write(email, password,)
 			st.success("Signup successful!")
+			switch_page("Personal_Information.py")
 bar, text, bar = st.columns(3)
 st.markdown("""
 	<h3>- OR -</h3>

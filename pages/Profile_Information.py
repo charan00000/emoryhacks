@@ -12,6 +12,8 @@ st.logo(LOGO, icon_image=LOGO, size="large")
 # Page title
 st.title("Additional information")
 
+
+
 @dataclass
 class Person:
     email: str
