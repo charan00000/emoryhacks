@@ -38,7 +38,7 @@ def generate(input, history, num_responses):
         query += "in addition to asking a question, you may provide insight into the possible medical condition based on and only on the following conversation history. "
     query += "Here is the context conversation history so far:"
     for message in history:
-        history_string += f"(sender: {message.origin}, message: {message.message}), "
+        history_string += f"(sender: {message.origin}, message: {message.message}), \n"
     query += history_string
     query += f"current prompt: {input}. "
     if num_responses > 7:
