@@ -1,6 +1,6 @@
 import pandas as pd
 import os
-from weasyprint import HTML
+from xhtml2pdf import pisa
 
 def generate_html(csv_path = 'conversation.csv'):
     df = pd.read_csv('conversation.csv')
@@ -60,9 +60,9 @@ def generate_html(csv_path = 'conversation.csv'):
     html_to_pdf(html_path='conversation.html', output_path='conversation.pdf')
 
 def html_to_pdf(html_path = "conversation.html", output_path = "conversation.pdf"):
-    HTML(html_path).write_pdf(output_path)
+    status = pisa.CreatePDF(open(html_path, 'r'), dest=open(output_path, 'wb'))
     print('pdf report generated in ' + output_path)
 
 if __name__ == '__main__':
-    generate_html()
-    #html_to_pdf()
+    #generate_html()
+    html_to_pdf()
