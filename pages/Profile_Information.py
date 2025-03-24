@@ -85,7 +85,7 @@ if submitted:
     email = st.session_state.current_user.email
     password = st.session_state.current_user.password
     st.session_state.current_user = Person(
-        email, password, fn.upper(), ln.upper(), dob.strftime("%m/%d/%Y"), sex.removeprefix(":blue[").removeprefix(":violet[").removesuffix("]").upper(), location.lower()
+        email, password, fn.upper(), ln.upper(), dob.strftime("%m/%d/%Y"), sex.removeprefix(":blue[").removeprefix(":violet[").removesuffix("]").upper(), location.upper()
     )
 
     conn = connect_to_db()

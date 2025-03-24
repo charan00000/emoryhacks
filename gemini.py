@@ -48,7 +48,7 @@ def generate(input, history, num_responses):
         return general_model.generate_content(query).text, (), ()
     else:
         output = general_model.generate_content(query + history_string).text
-        specialty = general_model.generate_content("look through your response and provide a one or two word doctor practice specialty, like General Practician, or Cardiologist. RESPONSE MUST BE ONE WORD OR TWO WORDS").text
+        specialty = general_model.generate_content(f"look through your response and provide a one or two word doctor practice specialty, like General Practician, or Cardiologist. RESPONSE MUST BE ONE WORD OR TWO WORDS. Your responses: {history_string}").text
         return output, history_string, specialty
 
 

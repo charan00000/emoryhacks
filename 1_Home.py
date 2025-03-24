@@ -13,6 +13,9 @@ from pdf2image import convert_from_path
 from PIL import Image
 import models
 import pandas as pd
+import sqlite3
+
+from st_models import Person
 
 LOGO = "static/emory_hack_logo.png"
 
@@ -47,6 +50,11 @@ def initialize_session_state():
         st.session_state.num_responses = 0
     if "specialty" not in st.session_state:
         st.session_state.specialty = ""
+    # Ensure session state is initialized
+    if "search_results" not in st.session_state:
+        st.session_state.search_results = None
+    if "current_user" not in st.session_state:
+        st.session_state.current_user = Person("", "", "", "", "", "", "")
     
 def on_click_callback():
     human_prompt = st.session_state.human_prompt
@@ -115,29 +123,47 @@ with prompt_container:
         on_click=on_click_callback
     )
 
-# if st.button("Generate Report"):
-#     display_pdf()
+if st.button("Generate Report"):
+     display_pdf()
 
 data_placeholder = st.empty()
 
 def search_button_callback():
-    with data_placeholder:
-        path = "other_doctors.csv"
-        specialty = st.session_state.specialty
-        city = st.session_state.current_user.location
-        df = pd.read_csv(path)
-        #df = df.sort_values(by="Rating", ascending=False)
-        s_fil_df = df[df["Specialty"].str.contains(specialty)]
-        c_fil_df = s_fil_df[s_fil_df["City"].str.contains(city)]
-        best_doc = c_fil_df.sort_values(by="Rating", ascending=False).head(3)
-        st.write(best_doc)
+    # Perform the search and store the results in session state
+    path = "doctors_georgia.csv"
+    specialty = st.session_state.specialty.upper().strip()
+    conn = sqlite3.connect("emory_hack.db")
+    c = conn.cursor()
+    c.execute("SELECT city FROM users WHERE email = ?", (st.session_state.current_user.email,))
+    city = c.fetchone()[0].strip()
+
+    print("specialty: " + specialty)
+    print("city: " + city)
+
+    df = pd.read_csv(path)
+
+    print(df.head(5))
+    print()
+    s_fil_df = df[df["Specialty"].str.contains(specialty, case=False)]
+    print(s_fil_df)
+    print()
+    c_fil_df = s_fil_df[s_fil_df["City"].str.contains(city, case=False)]
+    print(c_fil_df)
+    print()
+    best_doc = c_fil_df.sort_values(by="Rating", ascending=False)
+    # Store the results in session state
+    st.session_state.search_results = best_doc
+    print(best_doc)
 
 # Search section
 search_cols = st.columns((6, 1))
 search_cols[0].markdown('<h2>Find the right doctor for you!</h2>', unsafe_allow_html=True)
 search_cols[1].button("Search", on_click=search_button_callback)
 
-
+# Display the results if they exist
+if st.session_state.search_results is not None:
+    with data_placeholder:
+        st.write(st.session_state.search_results)
 
 # Footer
 st.markdown('<div class="footer">ReferAI - Your Health Assistant</div>', unsafe_allow_html=True)

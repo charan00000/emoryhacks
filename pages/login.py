@@ -2,6 +2,7 @@ import streamlit as st
 import sqlite3
 from streamlit_extras.switch_page_button import switch_page
 from dataclasses import dataclass
+from st_models import Person
 
 LOGO = "static/emory_hack_logo.png"
 
@@ -15,15 +16,6 @@ with open("static/style.css") as css:
 
 st.logo(LOGO, icon_image=LOGO, size="large")
 
-@dataclass
-class Person:
-	email: str
-	password: str
-	fn: str
-	ln: str	
-	dob: str
-	sex: str
-	location: str
 
 def initialize_session_state():
 	if "current_user" not in st.session_state:
@@ -109,8 +101,3 @@ bar, text, bar = st.columns(3)
 st.markdown(f"""
 	<h3>  </h3>
 """, unsafe_allow_html=True)
-
-
-
-
-
