@@ -10,9 +10,3 @@ class Person:
 	dob: str
 	sex: str
 	location: str
-
-def initialize_session_state():
-	if "current_user" not in st.session_state:
-		st.session_state.current_user = Person("", "", "", "", "", "", "")
-	if "logged_in" not in st.session_state:
-		st.session_state.logged_in = False

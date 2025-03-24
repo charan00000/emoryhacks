@@ -44,7 +44,6 @@ def check_login(email, password):
 login, signup = st.tabs(["**Login**", "**Sign Up**"])
 
 with login:
-
 	with st.form("login-form", clear_on_submit=True, border=True) as login_form:
 		email = st.text_input("Email", key="email-text", placeholder="Enter email")
 		password = st.text_input("Password", key="password-text", placeholder="Enter password")
@@ -68,6 +67,8 @@ with login:
 				st.session_state.logged_in = True
 				st.success("Login successful!")
 				switch_page("Home")
+		elif submitted:
+			st.error("Invalid email or password")
 with signup:
 	with st.form("signup-form", clear_on_submit=True, border=True) as login_form:
 		email = st.text_input("Email", key="email-text2", placeholder="Email")

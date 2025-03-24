@@ -14,6 +14,7 @@ from PIL import Image
 import models
 import pandas as pd
 import sqlite3
+import fuzzywuzzy
 
 from st_models import Person
 
@@ -72,6 +73,12 @@ def on_click_callback():
         print(specialty)
         #models.search_doctors(specialty)
 
+def on_restart_callback():
+    st.session_state.history = []
+    st.session_state.num_responses = 0
+    st.session_state.specialty = ""
+    st.session_state.search_results = None
+    st.rerun()
 
 def display_pdf(file_path = 'conversation.pdf'):
     images = convert_from_path(file_path)
@@ -123,12 +130,18 @@ with prompt_container:
         on_click=on_click_callback
     )
 
+if st.button("Restart Chat"):
+    on_restart_callback()
 if st.button("Generate Report"):
-     display_pdf()
+    display_pdf()
+    
 
 data_placeholder = st.empty()
 
 def search_button_callback():
+    if st.session_state.specialty == "":
+        st.error("Please finish a chat with the chatbot before searching.")
+        return
     # Perform the search and store the results in session state
     path = "doctors_georgia.csv"
     specialty = st.session_state.specialty.upper().strip()
@@ -151,6 +164,9 @@ def search_button_callback():
     print(c_fil_df)
     print()
     best_doc = c_fil_df.sort_values(by="Rating", ascending=False)
+    if best_doc.empty:
+        st.error("No doctors found. Sorry!")
+        return
     # Store the results in session state
     st.session_state.search_results = best_doc
     print(best_doc)
