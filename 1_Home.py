@@ -14,7 +14,7 @@ from PIL import Image
 import models
 import pandas as pd
 import sqlite3
-import fuzzywuzzy
+from rapidfuzz import process, fuzz
 
 from st_models import Person
 
@@ -157,9 +157,11 @@ def search_button_callback():
 
     print(df.head(5))
     print()
-    s_fil_df = df[df["Specialty"].str.contains(specialty, case=False)]
-    print(s_fil_df)
-    print()
+    #find ratio of matches of specialty column values to st.session_state.specialty, then filter df
+    matches = df["Specialty"].apply(lambda x: process.extractOne(specialty, [x], scorer=fuzz.partial_ratio))
+    df["Match_Score"] = matches.apply(lambda x: x[1] if x else 0)
+    s_fil_df = df[df["Match_Score"] > 92]
+
     c_fil_df = s_fil_df[s_fil_df["City"].str.contains(city, case=False)]
     print(c_fil_df)
     print()

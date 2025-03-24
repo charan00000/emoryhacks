@@ -1,31 +1,23 @@
 Sender,Message
-human,I have a runny nose
-ai,"Okay, I can help you with that.
-
-To get a better understanding of your situation, could you tell me if you have any other symptoms besides a runny nose, such as congestion, sneezing, or a cough?
+human,headache
+ai,"Alright, I understand you're experiencing a headache. To get a better understanding of what might be causing it, could you describe the location and type of pain you're feeling? For example, is it throbbing, sharp, dull, or a pressure-like sensation? And where is it located - is it all over your head, on one side, or in a specific area?
 "
-human,sneezing
-ai,"Okay, thanks for letting me know you're also sneezing.
-
-To help me narrow down the possibilities, how long have you been experiencing the runny nose and sneezing?
+human,dull
+ai,"Okay, you're experiencing a dull headache. How long have you been experiencing this headache?
 "
 human,2 days
-ai,"Thanks for letting me know. Have you noticed if your nasal discharge is clear, or is it colored (yellow, green, or any other color)?
-"
-human,reen
-ai,"Okay, thanks for letting me know it's green. A green nasal discharge, along with a runny nose and sneezing, could indicate a possible infection, such as a cold or sinusitis.
-
-To help me understand your situation better, have you experienced any facial pain or pressure?
+ai,"Okay, you've had a dull headache for 2 days. Have you taken any medication for it, and if so, what was it and did it provide any relief?
 "
 human,no
-ai,"Okay, thanks for letting me know you don't have any facial pain or pressure.
+ai,"Okay, you've had a dull headache for 2 days and haven't taken any medication for it.
 
-Have you taken any medication for your symptoms?
+Since it's been a couple of days, I'm wondering if anything specific seems to trigger or worsen the headache? For instance, does it get worse with bright lights, noise, stress, or certain activities?
 "
-human,no
-ai,"Okay, thanks for letting me know you have not taken any medication for your symptoms.
+human,no but I have a headache
+ai,"It sounds like you're still experiencing the dull headache, even though you said nothing triggers it. Have you noticed any other symptoms accompanying the headache, such as nausea, dizziness, or vision changes?
+"
+human,chills
+ai,"Okay, you're experiencing chills along with the dull headache you've had for the past two days. The combination of headache and chills could indicate a possible infection or illness.
 
-Since you have a green nasal discharge, runny nose, and sneezing for the past two days, and you're not experiencing any facial pain or pressure, it still could be a cold or another upper respiratory infection.
-
-To gather a bit more information, have you had a fever or chills?
+Have you taken your temperature? If so, what was it?
 "

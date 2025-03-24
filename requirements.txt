@@ -6,6 +6,7 @@ annotated-types==0.7.0
 antlr4-python3-runtime==4.9.3
 anyio==4.9.0
 attrs==23.2.0
+Authlib==1.5.1
 Automat==24.8.1
 beautifulsoup4==4.13.3
 bleach==6.2.0
@@ -37,6 +38,7 @@ filelock==3.18.0
 fonttools==4.56.0
 frozenlist==1.5.0
 fsspec==2025.3.0
+fuzzywuzzy==0.18.0
 gitdb==4.0.12
 GitPython==3.1.44
 glib==1.0.0
@@ -127,6 +129,7 @@ python-slugify==8.0.4
 pytz==2025.1
 PyYAML==6.0.2
 queuelib==1.7.0
+RapidFuzz==3.12.2
 referencing==0.36.2
 regex==2024.11.6
 requests==2.32.3
