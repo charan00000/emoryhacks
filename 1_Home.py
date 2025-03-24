@@ -80,10 +80,10 @@ def on_restart_callback():
     st.session_state.search_results = None
     st.rerun()
 
-"""def display_pdf(file_path = 'conversation.pdf'):
+def display_pdf(file_path = 'conversation.pdf'):
     images = convert_from_path(file_path)
-    for image in images:s
-        st.image(image)"""
+    for image in images:
+        st.image(image)
 
 initialize_session_state()
 
@@ -132,8 +132,8 @@ with prompt_container:
 
 if st.button("Restart Chat"):
     on_restart_callback()
-if st.button("Generate Report"):
-    display_pdf()
+#if st.button("Generate Report"):
+#    display_pdf()
     
 
 data_placeholder = st.empty()
