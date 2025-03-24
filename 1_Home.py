@@ -69,7 +69,7 @@ def on_click_callback():
     st.session_state.human_prompt = ""
     st.session_state.specialty = specialty
     if len(report_info) > 0:
-        make_csv(report_info, upload = True)
+        make_csv(report_info, upload = False)
         print(specialty)
         #models.search_doctors(specialty)
 
@@ -160,7 +160,7 @@ def search_button_callback():
     #find ratio of matches of specialty column values to st.session_state.specialty, then filter df
     matches = df["Specialty"].apply(lambda x: process.extractOne(specialty, [x], scorer=fuzz.partial_ratio))
     df["Match_Score"] = matches.apply(lambda x: x[1] if x else 0)
-    s_fil_df = df[df["Match_Score"] > 92]
+    s_fil_df = df[df["Match_Score"] > 90]
 
     c_fil_df = s_fil_df[s_fil_df["City"].str.contains(city, case=False)]
     print(c_fil_df)
