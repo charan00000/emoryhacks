@@ -1,5 +1,9 @@
 import streamlit as st
 from streamlit_extras.switch_page_button import switch_page
+from streamlit_extras.card import card
+
+import hydralit_components as hc
+
 from dataclasses import dataclass
 from typing import Literal
 import sys
@@ -51,12 +55,15 @@ def initialize_session_state():
         st.session_state.num_responses = 0
     if "specialty" not in st.session_state:
         st.session_state.specialty = ""
-    # Ensure session state is initialized
     if "search_results" not in st.session_state:
         st.session_state.search_results = None
     if "current_user" not in st.session_state:
         st.session_state.current_user = Person("", "", "", "", "", "", "")
-    
+    if "human_prompt" not in st.session_state:
+        st.session_state.human_prompt = ""
+
+initialize_session_state()
+
 def on_click_callback():
     human_prompt = st.session_state.human_prompt
     llm_response = generate(human_prompt, st.session_state.history, st.session_state.num_responses)
@@ -71,17 +78,13 @@ def on_click_callback():
     if len(report_info) > 0:
         make_csv(report_info, upload = False)
         print(specialty)
-        #models.search_doctors(specialty)
 
 def on_restart_callback():
     st.session_state.history = []
     st.session_state.num_responses = 0
     st.session_state.specialty = ""
     st.session_state.search_results = None
-    st.rerun()
-
-
-initialize_session_state()
+    st.session_state.human_prompt = ""
 
 chat_container = st.container(key="chat-container")
 prompt_container = st.form("chat-form")
@@ -126,10 +129,10 @@ with prompt_container:
         on_click=on_click_callback
     )
 
-if st.button("Restart Chat"):
-    on_restart_callback()
+st.button("Restart Chat", on_click=on_restart_callback)
 if st.session_state.specialty != "":
-    st.download_button("Download Conversation", file_name = "conversation.pdf", data = open("conversation.pdf", "rb"))
+    with open("conversation.pdf", "rb") as pdf_file:
+        st.download_button("Download Conversation", file_name="conversation.pdf", data=pdf_file, mime="application/pdf")
     
 
 data_placeholder = st.empty()
@@ -141,13 +144,10 @@ def search_button_callback():
     # Perform the search and store the results in session state
     path = "doctors_georgia.csv"
     specialty = st.session_state.specialty.upper().strip()
-    conn = sqlite3.connect("emory_hack.db")
-    c = conn.cursor()
-    c.execute("SELECT city FROM users WHERE email = ?", (st.session_state.current_user.email,))
-    city = c.fetchone()[0].strip()
+    city = st.session_state.current_user.location
     df = pd.read_csv(path)
     #find ratio of matches of specialty column values to st.session_state.specialty, then filter df
-    matches = df["Specialty"].apply(lambda x: process.extractOne(specialty, [x], scorer=fuzz.partial_ratio))
+    matches = df["Specialty"].apply(lambda x: process.extractOne(specialty, [x], scorer=fuzz.ratio))
     df["Match_Score"] = matches.apply(lambda x: x[1] if x else 0)
     s_fil_df = df[df["Match_Score"] > 90]
 
@@ -163,15 +163,67 @@ def search_button_callback():
 # Search section
 search_cols = st.columns((6, 1))
 search_cols[0].markdown('<h2>Find the right doctor for you!</h2>', unsafe_allow_html=True)
-if (st.session_state.current_user.location != "" and st.session_state.specialty != ""):
+if (st.session_state.current_user.location is not None and st.session_state.specialty is not None):
     search_cols[1].button("Search", on_click=search_button_callback)
+
+def doctor_card(name, specialty, city, state, rating, profile_url):
+    stars = "⭐" * round(rating)
+    
+    st.markdown(
+        f"""
+        <a href="{profile_url}" target="_blank" style="text-decoration: none; color: inherit;">
+            <div style="
+                background-color: #f6f8fc; 
+                padding: 16px; 
+                border-radius: 16px; 
+                box-shadow: 0 2px 8px rgba(0,0,0,0.05); 
+                margin-bottom: 16px;
+                transition: transform 0.2s ease-in-out;
+                cursor: pointer;
+            " onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+                <h4 style="margin-bottom: 8px;">{name.title()}</h4>
+                <p style="margin: 4px 0; font-weight:500;">{specialty.title()}</p>
+                <p style="margin: 4px 0;">{city.title()}, {state.title()}</p>
+                <p style="margin: 4px 0; font-size: 18px;">{stars}</p>
+                <p style="margin: 4px 0; font-size: 14px;">Rating: {rating}</p>
+            </div>
+        </a>
+        """,
+        unsafe_allow_html=True
+    )
+
+
+# function to make 3 cards for each doctor
+def create_doctor_cards():
+    with data_placeholder:
+        bdocs = st.session_state.search_results
+        doc1 = bdocs.iloc[0]
+        doc2 = bdocs.iloc[1]
+        doc3 = bdocs.iloc[2]
+        docs = [doc1, doc2, doc3]
+
+        doc_cols = st.columns(3)
+        for i in range(3):
+            with doc_cols[i]:
+                doc = docs[i]
+                doctor_card(
+                    name= doc["Doctor Name"],
+                    specialty = doc["Specialty"],
+                    city = doc["City"],
+                    state = doc["State"],
+                    rating = doc["Rating"],
+                    profile_url="https://www.youtube.com"
+                )
 
 # Display the results if they exist
 if st.session_state.search_results is not None:
-    with data_placeholder:
-        st.write(st.session_state.search_results)
+    create_doctor_cards()
+                
+            
 set_location_text_placeholder = st.empty()
 
+st.markdown("Set your location in Profile Information and complete a chat in order to search for doctors.")
+if st.button("Go to Profile Information"):
+    switch_page("Profile_Information")
+
 # Footer
-st.markdown("""**Set your location in [Profile Information](Profile_Information) and complete a chat
-            in order to search for doctors**""", unsafe_allow_html=True)

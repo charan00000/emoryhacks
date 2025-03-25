@@ -16,8 +16,8 @@ At ReferAI, we’re a group of passionate students from top Georgia universities
 Our team blends diverse skills in data science, computer engineering, and software development — all dedicated to building smarter healthcare solutions.
 """)
 
-# Christo A
-st.header("👨‍💻 Christo A")
+# Christo Antony
+st.header("👨‍💻 Christo Antony")
 st.subheader("Georgia State University | Freshman | Pre-CIS → Industrial Engineering (Georgia Tech Transfer Pathway)")
 st.write("""
 Christo is an aspiring data analyst and data scientist with a strong curiosity for solving complex problems with clean, insightful data visualizations.   
@@ -25,8 +25,8 @@ He is driven by a passion for using analytics to bridge gaps between people and 
 In his free time, you’ll find him learning new machine learning techniques, working on side projects, and exploring ways to make systems more efficient.
 """)
 
-# Charan K
-st.header("💻 Charan K")
+# Charan Koyaguri
+st.header("💻 Charan Koyaguri")
 st.subheader("Georgia Tech | Freshman | Computer Science Major")
 st.write("""
 Charan is an aspiring data scientist who loves uncovering stories hidden in data.   
@@ -34,8 +34,8 @@ With a focus on building intelligent models and finding patterns others miss, he
 Outside of coding, Charan enjoys participating in hackathons and is constantly on the lookout for innovative ways to use AI for good.
 """)
 
-# Bahuliya M
-st.header("🖥️ Bahuliya M")
+# Bahuliya Manyapu
+st.header("🖥️ Bahuliya Manyapu")
 st.subheader("Georgia Tech | Freshman | Computer Science Major")
 st.write("""
 Bahuliya is a driven future software engineer with a knack for full-stack development and system design.   
@@ -43,8 +43,8 @@ She’s passionate about building applications that make a tangible difference i
 Bahuliya thrives in collaborative environments and loves bringing technical ideas from concept to reality — with plenty of creativity in between.
 """)
 
-# Kedarnath M
-st.header("🚀 Kedarnath M")
+# Kedarnath Mohan
+st.header("🚀 Kedarnath Mohan")
 st.subheader("University of Georgia | Freshman | Computer Engineering Major")
 st.write("""
 Kedarnath is an aspiring aerospace engineer with a deep fascination for both the skies and the systems that power them.   

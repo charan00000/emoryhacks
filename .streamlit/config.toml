@@ -7,5 +7,3 @@ font="sans serif"
 
 [server]
 enableStaticServing = true
-port = 8502
-

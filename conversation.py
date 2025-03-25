@@ -60,7 +60,8 @@ def generate_html(csv_path = 'conversation.csv'):
     html_to_pdf(html_path='conversation.html', output_path='conversation.pdf')
 
 def html_to_pdf(html_path = "conversation.html", output_path = "conversation.pdf"):
-    status = pisa.CreatePDF(open(html_path, 'r'), dest=open(output_path, 'wb'))
+    with open(html_path, 'r') as html_file, open(output_path, 'wb') as pdf_file:
+        status = pisa.CreatePDF(html_file, dest=pdf_file)
     print('pdf report generated in ' + output_path)
 
 if __name__ == '__main__':
