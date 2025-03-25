@@ -143,7 +143,8 @@ def search_button_callback():
     conn = sqlite3.connect("emory_hack.db")
     c = conn.cursor()
     c.execute("SELECT city FROM users WHERE email = ?", (st.session_state.current_user.email,))
-    city = c.fetchone()[0].strip()
+    #city = c.fetchone()[0].strip()
+    city = st.session_state.current_user.location
     df = pd.read_csv(path)
     #find ratio of matches of specialty column values to st.session_state.specialty, then filter df
     matches = df["Specialty"].apply(lambda x: process.extractOne(specialty, [x], scorer=fuzz.ratio))
