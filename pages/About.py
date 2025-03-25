@@ -17,7 +17,7 @@ Our team blends diverse skills in data science, computer engineering, and softwa
 """)
 
 # Christo Antony
-st.header("👨‍💻 Christo A")
+st.header("👨‍💻 Christo Antony")
 st.subheader("Georgia State University | Freshman | Pre-CIS → Industrial Engineering (Georgia Tech Transfer Pathway)")
 st.write("""
 Christo is an aspiring data analyst and data scientist with a strong curiosity for solving complex problems with clean, insightful data visualizations.   
@@ -26,7 +26,7 @@ In his free time, you’ll find him learning new machine learning techniques, wo
 """)
 
 # Charan Koyaguri
-st.header("💻 Charan K")
+st.header("💻 Charan Koyaguri")
 st.subheader("Georgia Tech | Freshman | Computer Science Major")
 st.write("""
 Charan is an aspiring data scientist who loves uncovering stories hidden in data.   
@@ -35,7 +35,7 @@ Outside of coding, Charan enjoys participating in hackathons and is constantly o
 """)
 
 # Bahuliya Manyapu
-st.header("🖥️ Bahuliya M")
+st.header("🖥️ Bahuliya Manyapu")
 st.subheader("Georgia Tech | Freshman | Computer Science Major")
 st.write("""
 Bahuliya is a driven future software engineer with a knack for full-stack development and system design.   
