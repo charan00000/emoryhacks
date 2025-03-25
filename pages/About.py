@@ -16,7 +16,7 @@ At ReferAI, we’re a group of passionate students from top Georgia universities
 Our team blends diverse skills in data science, computer engineering, and software development — all dedicated to building smarter healthcare solutions.
 """)
 
-# Christo A
+# Christo Antony
 st.header("👨‍💻 Christo A")
 st.subheader("Georgia State University | Freshman | Pre-CIS → Industrial Engineering (Georgia Tech Transfer Pathway)")
 st.write("""
@@ -25,7 +25,7 @@ He is driven by a passion for using analytics to bridge gaps between people and 
 In his free time, you’ll find him learning new machine learning techniques, working on side projects, and exploring ways to make systems more efficient.
 """)
 
-# Charan K
+# Charan Koyaguri
 st.header("💻 Charan K")
 st.subheader("Georgia Tech | Freshman | Computer Science Major")
 st.write("""
@@ -34,7 +34,7 @@ With a focus on building intelligent models and finding patterns others miss, he
 Outside of coding, Charan enjoys participating in hackathons and is constantly on the lookout for innovative ways to use AI for good.
 """)
 
-# Bahuliya M
+# Bahuliya Manyapu
 st.header("🖥️ Bahuliya M")
 st.subheader("Georgia Tech | Freshman | Computer Science Major")
 st.write("""
