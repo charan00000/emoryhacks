@@ -51,7 +51,6 @@ def initialize_session_state():
         st.session_state.num_responses = 0
     if "specialty" not in st.session_state:
         st.session_state.specialty = ""
-    # Ensure session state is initialized
     if "search_results" not in st.session_state:
         st.session_state.search_results = None
     if "current_user" not in st.session_state:
@@ -172,6 +171,8 @@ if st.session_state.search_results is not None:
         st.write(st.session_state.search_results)
 set_location_text_placeholder = st.empty()
 
+st.markdown("Set your location in Profile Information and complete a chat in order to search for doctors.")
+if st.button("Go to Profile Information"):
+    switch_page("Profile_Information")
+
 # Footer
-st.markdown("""**Set your location in [Profile Information](Profile_Information) and complete a chat
-            in order to search for doctors**""", unsafe_allow_html=True)
