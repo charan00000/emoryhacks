@@ -145,22 +145,13 @@ def search_button_callback():
     c = conn.cursor()
     c.execute("SELECT city FROM users WHERE email = ?", (st.session_state.current_user.email,))
     city = c.fetchone()[0].strip()
-
-    print("specialty: " + specialty)
-    print("city: " + city)
-
     df = pd.read_csv(path)
-
-    print(df.head(5))
-    print()
     #find ratio of matches of specialty column values to st.session_state.specialty, then filter df
     matches = df["Specialty"].apply(lambda x: process.extractOne(specialty, [x], scorer=fuzz.partial_ratio))
     df["Match_Score"] = matches.apply(lambda x: x[1] if x else 0)
     s_fil_df = df[df["Match_Score"] > 90]
 
     c_fil_df = s_fil_df[s_fil_df["City"].str.contains(city, case=False)]
-    print(c_fil_df)
-    print()
     best_doc = c_fil_df.sort_values(by="Rating", ascending=False)
     if best_doc.empty:
         st.error("No doctors found. Sorry!")
@@ -172,7 +163,7 @@ def search_button_callback():
 # Search section
 search_cols = st.columns((6, 1))
 search_cols[0].markdown('<h2>Find the right doctor for you!</h2>', unsafe_allow_html=True)
-if (st.session_state.current_user.location != "" and st.session_state.current_user.location != ""):
+if (st.session_state.current_user.location != "" and st.session_state.specialty != ""):
     search_cols[1].button("Search", on_click=search_button_callback)
 
 # Display the results if they exist
