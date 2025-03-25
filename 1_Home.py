@@ -182,4 +182,5 @@ if st.session_state.search_results is not None:
 set_location_text_placeholder = st.empty()
 
 # Footer
-st.markdown("**Set your location in [Profile Information](Profile_Information) and complete a chat**", unsafe_allow_html=True)
+st.markdown("""**Set your location in [Profile Information](Profile_Information) and complete a chat
+            in order to search for doctors**""", unsafe_allow_html=True)
