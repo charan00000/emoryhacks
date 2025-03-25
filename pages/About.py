@@ -10,7 +10,7 @@ with open("static/style.css") as css:
 st.logo(LOGO, icon_image=LOGO, size="large")
 import streamlit as st
 
-st.title("DISCLAIMER")
+st.title("‼️ DISCLAIMER")
 st.write("""
     This app was built as a personal project and is not a substitute for professional medical advice, 
     diagnosis, or treatment. By using this app, you acknowledge and agree that the creators of this project 
