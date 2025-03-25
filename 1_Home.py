@@ -146,7 +146,7 @@ def search_button_callback():
     city = c.fetchone()[0].strip()
     df = pd.read_csv(path)
     #find ratio of matches of specialty column values to st.session_state.specialty, then filter df
-    matches = df["Specialty"].apply(lambda x: process.extractOne(specialty, [x], scorer=fuzz.partial_ratio))
+    matches = df["Specialty"].apply(lambda x: process.extractOne(specialty, [x], scorer=fuzz.ratio))
     df["Match_Score"] = matches.apply(lambda x: x[1] if x else 0)
     s_fil_df = df[df["Match_Score"] > 90]
 
