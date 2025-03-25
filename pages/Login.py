@@ -69,6 +69,18 @@ with login:
 				switch_page("Home")
 		elif submitted:
 			st.error("Invalid email or password")
+		bar, text, bar = st.columns(3)
+
+		text.markdown("""
+		<style> h3 {text-align:center; color:black;} </style>
+		<h3>-OR-</h3>
+		""",unsafe_allow_html=True)
+		google_logo = "./static/google-icon.svg"
+with st.container():
+	outer,google,microsoft,inner = st.columns(4)
+	with google:
+		if st.button("Login with Google"):
+			st.login("google")
 with signup:
 	with st.form("signup-form", clear_on_submit=True, border=True) as login_form:
 		email = st.text_input("Email", key="email-text2", placeholder="Email")
@@ -98,7 +110,4 @@ with signup:
 					bottom = "Success"
 					st.success("Signup successful!")
 					switch_page("profile information")
-bar, text, bar = st.columns(3)
-st.markdown(f"""
-	<h3>  </h3>
-""", unsafe_allow_html=True)
+
