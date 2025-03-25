@@ -1,27 +1,33 @@
 Sender,Message
-human,headache
-ai,"Alright, I understand you're experiencing a headache. To get a better understanding of what might be going on, can you describe the location of your headache? Is it all over your head, on one side, or in a specific area like your forehead or temples?
+human,hedache
+ai,"Okay, I understand. I'm here to help.
+
+You mentioned you have a headache. To get a better understanding, can you describe the location of your headache? Is it all over, on one side, in your forehead, or somewhere else?
 "
-human,temples
-ai,"Okay, you're experiencing a headache specifically in your temples. When did this headache start?
+human,forehad
+ai,"Okay. So the headache is located in your forehead.
+
+Can you describe the quality of the headache? For example, is it throbbing, sharp, dull, or a pressure-like sensation?
+"
+human,hrobbig
+ai,"Okay, I understand. So you're experiencing a throbbing headache in your forehead.
+
+When did this throbbing headache start?
 "
 human,two days ago
-ai,"Okay, your headache in the temples started two days ago. Can you describe the nature of the pain? Is it throbbing, constant, sharp, or dull?
+ai,"Okay, I understand. You've had a throbbing headache in your forehead for the past two days.
+
+Has the intensity of the throbbing headache remained constant, or has it been increasing or decreasing over these past two days?
 "
 human,constant
-ai,"Okay, you're experiencing a constant headache in your temples that started two days ago. Constant pain in the temples could be related to tension headaches, which are often described as a band tightening around the head. It can also be associated with other conditions, so further information is needed.
+ai,"Okay, I understand. The throbbing headache in your forehead has been constant for the past two days.
 
-To help me narrow down the possibilities, have you noticed any other symptoms accompanying the headache, such as neck stiffness, sensitivity to light or sound, nausea, or visual disturbances?
+Some possible causes of a constant throbbing headache in the forehead could include tension headaches, sinus infections, or even dehydration. However, it's important to gather more information to narrow down the possibilities.
+
+Besides the throbbing pain, have you experienced any other symptoms such as nasal congestion, runny nose, facial pressure, or fever?
 "
-human,light sensitive
-ai,"Okay, you're experiencing a constant headache in your temples that started two days ago, and you're also experiencing light sensitivity. Light sensitivity (photophobia) along with a headache can be associated with migraines or tension headaches.
+human,congestion fever
+ai,"Okay, I understand. In addition to the throbbing headache in your forehead, you're also experiencing congestion and fever.
 
-Have you taken any medication for the headache, and if so, what was it and did it provide any relief?
-"
-human,no med
-ai,"Okay, you're experiencing a constant headache in your temples that started two days ago, accompanied by light sensitivity, and you haven't taken any medication for it.
-
-Since the headache is in your temples, constant, and accompanied by light sensitivity, it is important to rule out other serious causes of headaches.
-
-Have you experienced any fever, vision changes, weakness, numbness, or difficulty speaking?
+These symptoms, combined with the throbbing forehead headache, could potentially indicate a sinus infection (sinusitis). However, to get a clearer picture, have you taken any medication to alleviate these symptoms, and if so, what was it and did it provide any relief?
 "

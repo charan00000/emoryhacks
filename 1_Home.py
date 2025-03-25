@@ -172,12 +172,14 @@ def search_button_callback():
 # Search section
 search_cols = st.columns((6, 1))
 search_cols[0].markdown('<h2>Find the right doctor for you!</h2>', unsafe_allow_html=True)
-search_cols[1].button("Search", on_click=search_button_callback)
+if (st.session_state.current_user.location != "" and st.session_state.current_user.location != ""):
+    search_cols[1].button("Search", on_click=search_button_callback)
 
 # Display the results if they exist
 if st.session_state.search_results is not None:
     with data_placeholder:
         st.write(st.session_state.search_results)
+set_location_text_placeholder = st.empty()
 
 # Footer
-st.markdown('<div class="footer">ReferAI - Your Health Assistant</div>', unsafe_allow_html=True)
+st.markdown("**Set your location in [Profile Information](Profile_Information) and complete a chat**", unsafe_allow_html=True)
