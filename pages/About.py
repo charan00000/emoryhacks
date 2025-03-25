@@ -10,17 +10,6 @@ with open("static/style.css") as css:
 st.logo(LOGO, icon_image=LOGO, size="large")
 import streamlit as st
 
-st.title("‼️ DISCLAIMER")
-st.write("""
-    This app was built as a personal project and is not a substitute for professional medical advice, 
-    diagnosis, or treatment. By using this app, you acknowledge and agree that the creators of this project 
-    are not responsible for any outcomes or actions taken based on the information provided. 
-         
-    Additionally, the doctors recommended by our service are not currently intended to be legitimate or 
-    real medical professionals. We assume no responsibility for any potential defamation of any individuals 
-    who may be coincidentally represented by our generated data.
-""")
-
 st.title("🚀 About the Team Behind ReferAI")
 st.write("""
 At ReferAI, we’re a group of passionate students from top Georgia universities, united by a shared goal: to revolutionize the way patients connect with the right doctors.   
@@ -61,6 +50,17 @@ st.write("""
 Kedarnath is an aspiring aerospace engineer with a deep fascination for both the skies and the systems that power them.   
 He brings a problem-solving mindset and technical rigor to every project, whether it’s building robust backend infrastructure or dreaming up future aerospace technologies.   
 He’s the team’s resident ‘big thinker,’ always looking at how technology today can shape tomorrow’s world.
+""")
+
+st.title("‼️ DISCLAIMER")
+st.write("""
+    This app was built as a personal project and is not a substitute for professional medical advice, 
+    diagnosis, or treatment. By using this app, you acknowledge and agree that the creators of this project 
+    are not responsible for any outcomes or actions taken based on the information provided. 
+         
+    Additionally, the doctors recommended by our service are not currently intended to be legitimate or 
+    real medical professionals. We assume no responsibility for any potential defamation of any individuals 
+    who may be coincidentally represented by our generated data.
 """)
 
 st.markdown("---")
