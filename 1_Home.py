@@ -128,7 +128,8 @@ with prompt_container:
 if st.button("Restart Chat"):
     on_restart_callback()
 if st.session_state.specialty != "":
-    st.download_button("Download Conversation", file_name = "conversation.pdf", data = open("conversation.pdf", "rb"))
+    with open("conversation.pdf", "rb") as pdf_file:
+        st.download_button("Download Conversation", file_name="conversation.pdf", data=pdf_file, mime="application/pdf")
     
 
 data_placeholder = st.empty()

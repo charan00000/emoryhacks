@@ -1,23 +1,31 @@
 Sender,Message
-human,I have a headache
-ai,"Okay, I understand you have a headache. To help me understand what might be causing it and how best to advise you, can you tell me, **where exactly does it hurt in your head?**
+human,headache
+ai,"Okay, I'm here to help. You're experiencing a headache. To understand what might be going on, can you tell me, **where is the headache located? Is it on one side of your head, both sides, or all over?**
 "
-human,front
-ai,"Okay, you mentioned the pain is in the front of your head. Can you describe the type of pain? Is it throbbing, sharp, a dull ache, or something else?
-"
-human,no
-ai,"Okay, you said no. Does that mean the pain is not throbbing, sharp, or a dull ache? If not, can you describe the pain in more detail?
-"
-human,no
-ai,"Okay, you said ""no"" again. I'm still trying to understand the type of pain you're experiencing in the front of your head. Since it's not throbbing, sharp, or a dull ache, can you describe it in your own words? For example, is it a pressure, a tightness, or something else?
+human,all over
+ai,"Okay, and it's all over your head. Thanks.
 
-Based on the location of your headache (front of the head) and that it's not throbbing, sharp, or a dull ache, it *could* potentially be related to tension or eye strain, but it's important to get a clearer picture of the sensation to narrow down the possibilities.
+To get a better understanding of your headache, could you describe the pain? Is it throbbing, sharp, dull, or something else?
 "
-human,no
-ai,"Okay, you've said ""no"" again. I understand you might not be able to easily describe the pain. Is the pain constant, or does it come and go?
-"
-human,no
-ai,"Okay, you've indicated ""no"" again. Since we are having trouble describing the pain, let's try a different approach. Are you experiencing any other symptoms besides the headache in the front of your head, such as nausea, dizziness, or sensitivity to light or sound?
+human,dull
+ai,"Okay, it's all over your head and the pain is dull.
 
-Given that the pain is in the front of your head and you haven't described it as throbbing, sharp, or a dull ache, and it's also not constant, it is even more difficult to narrow down potential causes. Knowing about other symptoms will help me understand what might be going on.
+How long have you been experiencing this dull headache?
+"
+human,3 days
+ai,"Okay, so you've had a dull headache all over your head for the past 3 days.
+
+A headache that is all over and dull in nature and has been present for 3 days could indicate a tension headache, but it could also be related to other factors like stress, dehydration, or even eye strain.
+
+Have you noticed any other symptoms accompanying the headache, such as neck stiffness, sensitivity to light or sound, nausea, or vision changes?
+"
+human,no
+ai,"Okay, so you've had a dull headache all over your head for the past 3 days, and you haven't noticed any other symptoms.
+
+Since it's been 3 days, have you tried any over-the-counter pain relievers like ibuprofen or acetaminophen? If so, did they provide any relief?
+"
+human,no
+ai,"Okay, so you've had a dull headache all over your head for the past 3 days, you haven't noticed any other symptoms, and over-the-counter pain relievers haven't provided any relief.
+
+Are you currently experiencing any stress or anxiety?
 "
