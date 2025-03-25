@@ -43,8 +43,8 @@ She’s passionate about building applications that make a tangible difference i
 Bahuliya thrives in collaborative environments and loves bringing technical ideas from concept to reality — with plenty of creativity in between.
 """)
 
-# Kedarnath M
-st.header("🚀 Kedarnath M")
+# Kedarnath Mohan
+st.header("🚀 Kedarnath Mohan")
 st.subheader("University of Georgia | Freshman | Computer Engineering Major")
 st.write("""
 Kedarnath is an aspiring aerospace engineer with a deep fascination for both the skies and the systems that power them.   
