@@ -12,7 +12,7 @@ with open("static/style.css") as css:
 
 st.logo(LOGO, icon_image=LOGO, size="large")
 # Page title
-st.title("Additional information")
+st.title("Profile information")
 existing_user=True
 def initialize_session_state():
     if "current_user" not in st.session_state:
