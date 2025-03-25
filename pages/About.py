@@ -55,7 +55,7 @@ He’s the team’s resident ‘big thinker,’ always looking at how technology
 
 
 st.markdown("---")
-st.title("‼️ DISCLAIMER")
+st.write("‼️ DISCLAIMER")
 st.write("""
     This app was built as a personal project and is not a substitute for professional medical advice, 
     diagnosis, or treatment. By using this app, you acknowledge and agree that the creators of this project 
@@ -65,6 +65,7 @@ st.write("""
     real medical professionals. We assume no responsibility for any potential defamation of any individuals 
     who may be coincidentally represented by our generated data.
 """)
+
 
 
 
