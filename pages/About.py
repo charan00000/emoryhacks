@@ -52,6 +52,9 @@ He brings a problem-solving mindset and technical rigor to every project, whethe
 He’s the team’s resident ‘big thinker,’ always looking at how technology today can shape tomorrow’s world.
 """)
 
+
+
+st.markdown("---")
 st.title("‼️ DISCLAIMER")
 st.write("""
     This app was built as a personal project and is not a substitute for professional medical advice, 
@@ -62,9 +65,6 @@ st.write("""
     real medical professionals. We assume no responsibility for any potential defamation of any individuals 
     who may be coincidentally represented by our generated data.
 """)
-
-st.markdown("---")
-st.write("Together, we are **ReferAI** — using smart technology to make smarter healthcare connections.")
 
 
 
