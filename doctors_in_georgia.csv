@@ -1,0 +1,308 @@
+Doctor Name,Specialty,City,State,Rating
+Dr. Robert Johnson,Cardiology,Atlanta,GA,4.5
+Dr. Patricia Williams,Dermatology,Atlanta,GA,4.0
+Dr. Michael Davis,Neurology,Atlanta,GA,3.9
+Dr. James Jones,Orthopedics,Atlanta,GA,4.3
+Dr. James Brown,Pediatrics,Atlanta,GA,4.4
+Dr. John Davis,Oncology,Atlanta,GA,4.8
+Dr. Jennifer Smith,Endocrinology,Atlanta,GA,4.2
+Dr. Michael Brown,Psychiatry,Atlanta,GA,3.9
+Dr. Michael Jones,Urology,Atlanta,GA,3.7
+Dr. John Brown,Gastroenterology,Atlanta,GA,4.5
+Dr. Mary Jones,Cardiology,Augusta,GA,3.4
+Dr. Mary Davis,Dermatology,Augusta,GA,4.9
+Dr. Linda Jones,Neurology,Augusta,GA,3.6
+Dr. Robert Davis,Orthopedics,Augusta,GA,3.1
+Dr. Linda Smith,Pediatrics,Augusta,GA,4.4
+Dr. Mary Johnson,Oncology,Augusta,GA,3.4
+Dr. James Williams,Endocrinology,Augusta,GA,4.9
+Dr. Mary Jones,Psychiatry,Augusta,GA,3.8
+Dr. Jennifer Davis,Urology,Augusta,GA,4.4
+Dr. Mary Smith,Gastroenterology,Augusta,GA,4.9
+Dr. James Brown,Cardiology,Columbus,GA,3.8
+Dr. Robert Williams,Dermatology,Columbus,GA,4.4
+Dr. Robert Johnson,Neurology,Columbus,GA,3.9
+Dr. Patricia Davis,Orthopedics,Columbus,GA,4.5
+Dr. Jennifer Jones,Pediatrics,Columbus,GA,4.9
+Dr. Linda Davis,Oncology,Columbus,GA,4.3
+Dr. James Brown,Endocrinology,Columbus,GA,4.7
+Dr. John Johnson,Psychiatry,Columbus,GA,4.8
+Dr. James Williams,Urology,Columbus,GA,4.9
+Dr. Jennifer Williams,Gastroenterology,Columbus,GA,4.0
+Dr. Linda Johnson,Cardiology,Macon,GA,3.2
+Dr. Robert Brown,Dermatology,Macon,GA,4.8
+Dr. Robert Jones,Neurology,Macon,GA,3.5
+Dr. Michael Davis,Orthopedics,Macon,GA,4.5
+Dr. Jennifer Johnson,Pediatrics,Macon,GA,4.7
+Dr. John Smith,Oncology,Macon,GA,4.3
+Dr. Linda Smith,Endocrinology,Macon,GA,4.9
+Dr. John Jones,Psychiatry,Macon,GA,4.2
+Dr. Robert Smith,Urology,Macon,GA,4.8
+Dr. John Brown,Gastroenterology,Macon,GA,4.1
+Dr. Mary Williams,Cardiology,Savannah,GA,4.4
+Dr. Michael Johnson,Dermatology,Savannah,GA,4.1
+Dr. Patricia Jones,Neurology,Savannah,GA,3.2
+Dr. John Williams,Orthopedics,Savannah,GA,4.9
+Dr. Mary Jones,Pediatrics,Savannah,GA,4.7
+Dr. James Jones,Oncology,Savannah,GA,4.2
+Dr. Jennifer Brown,Endocrinology,Savannah,GA,3.7
+Dr. John Williams,Psychiatry,Savannah,GA,4.3
+Dr. Linda Davis,Urology,Savannah,GA,4.6
+Dr. John Johnson,Gastroenterology,Savannah,GA,4.8
+Dr. Robert Smith,Cardiology,Athens,GA,3.4
+Dr. Patricia Williams,Dermatology,Athens,GA,4.7
+Dr. John Jones,Neurology,Athens,GA,3.5
+Dr. Mary Jones,Orthopedics,Athens,GA,3.2
+Dr. Mary Johnson,Pediatrics,Athens,GA,3.8
+Dr. Mary Smith,Oncology,Athens,GA,3.8
+Dr. Patricia Williams,Endocrinology,Athens,GA,3.3
+Dr. Linda Brown,Psychiatry,Athens,GA,3.6
+Dr. John Williams,Urology,Athens,GA,3.1
+Dr. John Smith,Gastroenterology,Athens,GA,4.7
+Dr. Michael Johnson,Cardiology,Sandy Springs,GA,4.2
+Dr. John Brown,Dermatology,Sandy Springs,GA,3.2
+Dr. Mary Davis,Neurology,Sandy Springs,GA,4.2
+Dr. Patricia Davis,Orthopedics,Sandy Springs,GA,3.4
+Dr. Jennifer Brown,Pediatrics,Sandy Springs,GA,4.1
+Dr. Patricia Williams,Oncology,Sandy Springs,GA,3.9
+Dr. Robert Williams,Endocrinology,Sandy Springs,GA,4.5
+Dr. James Johnson,Psychiatry,Sandy Springs,GA,4.1
+Dr. Linda Williams,Urology,Sandy Springs,GA,3.7
+Dr. Mary Williams,Gastroenterology,Sandy Springs,GA,3.3
+Dr. Linda Brown,Cardiology,Roswell,GA,3.7
+Dr. Michael Davis,Dermatology,Roswell,GA,3.8
+Dr. Patricia Williams,Neurology,Roswell,GA,3.6
+Dr. John Smith,Orthopedics,Roswell,GA,3.1
+Dr. Jennifer Jones,Pediatrics,Roswell,GA,4.0
+Dr. Linda Smith,Oncology,Roswell,GA,4.5
+Dr. Mary Jones,Endocrinology,Roswell,GA,3.3
+Dr. James Smith,Psychiatry,Roswell,GA,4.9
+Dr. Jennifer Brown,Urology,Roswell,GA,5.0
+Dr. Michael Williams,Gastroenterology,Roswell,GA,3.5
+Dr. Jennifer Smith,Cardiology,Johns Creek,GA,4.3
+Dr. James Johnson,Dermatology,Johns Creek,GA,3.2
+Dr. James Brown,Neurology,Johns Creek,GA,4.9
+Dr. Patricia Smith,Orthopedics,Johns Creek,GA,3.6
+Dr. John Smith,Pediatrics,Johns Creek,GA,4.3
+Dr. John Johnson,Oncology,Johns Creek,GA,3.3
+Dr. John Davis,Endocrinology,Johns Creek,GA,3.9
+Dr. James Johnson,Psychiatry,Johns Creek,GA,4.1
+Dr. Linda Davis,Urology,Johns Creek,GA,3.3
+Dr. Linda Brown,Gastroenterology,Johns Creek,GA,3.8
+Dr. Jennifer Smith,Cardiology,Albany,GA,4.0
+Dr. Patricia Williams,Dermatology,Albany,GA,4.6
+Dr. James Jones,Neurology,Albany,GA,3.8
+Dr. James Johnson,Orthopedics,Albany,GA,4.1
+Dr. Jennifer Williams,Pediatrics,Albany,GA,4.8
+Dr. Michael Williams,Oncology,Albany,GA,3.9
+Dr. Michael Davis,Endocrinology,Albany,GA,3.4
+Dr. John Johnson,Psychiatry,Albany,GA,3.7
+Dr. Jennifer Smith,Urology,Albany,GA,3.6
+Dr. James Davis,Gastroenterology,Albany,GA,3.1
+Dr. Michael Williams,Cardiology,Warner Robins,GA,3.1
+Dr. Patricia Jones,Dermatology,Warner Robins,GA,3.2
+Dr. Patricia Williams,Neurology,Warner Robins,GA,5.0
+Dr. Michael Williams,Orthopedics,Warner Robins,GA,4.5
+Dr. Robert Davis,Pediatrics,Warner Robins,GA,4.1
+Dr. Jennifer Jones,Oncology,Warner Robins,GA,4.8
+Dr. John Davis,Endocrinology,Warner Robins,GA,4.7
+Dr. John Brown,Psychiatry,Warner Robins,GA,3.6
+Dr. Mary Johnson,Urology,Warner Robins,GA,4.7
+Dr. Michael Jones,Gastroenterology,Warner Robins,GA,4.2
+Dr. James Williams,Cardiology,Alpharetta,GA,3.3
+Dr. John Smith,Dermatology,Alpharetta,GA,3.6
+Dr. Robert Jones,Neurology,Alpharetta,GA,4.2
+Dr. Jennifer Johnson,Orthopedics,Alpharetta,GA,5.0
+Dr. Patricia Smith,Pediatrics,Alpharetta,GA,4.3
+Dr. Michael Brown,Oncology,Alpharetta,GA,3.9
+Dr. Linda Davis,Endocrinology,Alpharetta,GA,3.3
+Dr. James Smith,Psychiatry,Alpharetta,GA,3.8
+Dr. Michael Brown,Urology,Alpharetta,GA,3.1
+Dr. Jennifer Jones,Gastroenterology,Alpharetta,GA,4.7
+Dr. James Jones,Cardiology,Marietta,GA,4.7
+Dr. Robert Brown,Dermatology,Marietta,GA,4.1
+Dr. Robert Jones,Neurology,Marietta,GA,4.4
+Dr. Robert Williams,Orthopedics,Marietta,GA,4.3
+Dr. Jennifer Williams,Pediatrics,Marietta,GA,4.6
+Dr. Michael Jones,Oncology,Marietta,GA,3.9
+Dr. Michael Williams,Endocrinology,Marietta,GA,3.9
+Dr. Jennifer Smith,Psychiatry,Marietta,GA,3.5
+Dr. Patricia Williams,Urology,Marietta,GA,4.8
+Dr. Michael Smith,Gastroenterology,Marietta,GA,4.1
+Dr. Robert Brown,Cardiology,Valdosta,GA,4.6
+Dr. John Williams,Dermatology,Valdosta,GA,4.5
+Dr. Michael Brown,Neurology,Valdosta,GA,4.9
+Dr. John Smith,Orthopedics,Valdosta,GA,4.0
+Dr. Jennifer Davis,Pediatrics,Valdosta,GA,4.7
+Dr. Jennifer Smith,Oncology,Valdosta,GA,3.7
+Dr. Mary Brown,Endocrinology,Valdosta,GA,3.6
+Dr. Michael Williams,Psychiatry,Valdosta,GA,4.7
+Dr. Jennifer Williams,Urology,Valdosta,GA,3.5
+Dr. Patricia Johnson,Gastroenterology,Valdosta,GA,3.5
+Dr. John Williams,Cardiology,Smyrna,GA,3.1
+Dr. Jennifer Jones,Dermatology,Smyrna,GA,4.5
+Dr. Robert Smith,Neurology,Smyrna,GA,3.8
+Dr. Patricia Johnson,Orthopedics,Smyrna,GA,3.1
+Dr. Mary Johnson,Pediatrics,Smyrna,GA,4.5
+Dr. Patricia Brown,Oncology,Smyrna,GA,3.9
+Dr. James Johnson,Endocrinology,Smyrna,GA,3.7
+Dr. John Brown,Psychiatry,Smyrna,GA,3.6
+Dr. John Williams,Urology,Smyrna,GA,4.9
+Dr. Robert Smith,Gastroenterology,Smyrna,GA,3.8
+Dr. Michael Jones,Cardiology,Brookhaven,GA,3.3
+Dr. Mary Smith,Dermatology,Brookhaven,GA,4.9
+Dr. Michael Williams,Neurology,Brookhaven,GA,3.4
+Dr. James Davis,Orthopedics,Brookhaven,GA,3.3
+Dr. Linda Smith,Pediatrics,Brookhaven,GA,3.7
+Dr. John Davis,Oncology,Brookhaven,GA,4.0
+Dr. Jennifer Johnson,Endocrinology,Brookhaven,GA,3.4
+Dr. John Williams,Psychiatry,Brookhaven,GA,4.1
+Dr. John Brown,Urology,Brookhaven,GA,4.2
+Dr. Robert Williams,Gastroenterology,Brookhaven,GA,3.7
+Dr. Jennifer Jones,Endocrinology,Atlanta,GA,3.2
+Dr. Mary Jones,Neurology,Atlanta,GA,3.5
+Dr. John Smith,Neurology,Atlanta,GA,4.5
+Dr. Patricia Smith,Neurology,Atlanta,GA,4.2
+Dr. Patricia Jones,Neurology,Atlanta,GA,3.5
+Dr. Michael Williams,Endocrinology,Atlanta,GA,5.0
+Dr. John Williams,Orthopedics,Atlanta,GA,4.3
+Dr. James Johnson,Oncology,Atlanta,GA,3.8
+Dr. John Williams,Dermatology,Atlanta,GA,3.4
+Dr. John Williams,Orthopedics,Atlanta,GA,3.9
+Dr. Jennifer Jones,Dermatology,Atlanta,GA,3.3
+Dr. Mary Davis,Psychiatry,Atlanta,GA,3.5
+Dr. Linda Smith,Dermatology,Atlanta,GA,3.6
+Dr. Linda Smith,Cardiology,Atlanta,GA,3.5
+Dr. Robert Johnson,Dermatology,Atlanta,GA,4.0
+Dr. John Davis,Dermatology,Atlanta,GA,3.5
+Dr. Mary Smith,Cardiology,Atlanta,GA,4.0
+Dr. Patricia Smith,Dermatology,Atlanta,GA,5.0
+Dr. Patricia Smith,Gastroenterology,Atlanta,GA,3.8
+Dr. John Davis,Oncology,Atlanta,GA,3.3
+Dr. Robert Davis,Oncology,Atlanta,GA,3.9
+Dr. John Smith,Urology,Atlanta,GA,3.8
+Dr. James Jones,Urology,Atlanta,GA,4.9
+Dr. Mary Williams,Gastroenterology,Atlanta,GA,3.1
+Dr. John Davis,Oncology,Atlanta,GA,4.0
+Dr. John Smith,Dermatology,Atlanta,GA,3.9
+Dr. Mary Johnson,Orthopedics,Atlanta,GA,4.8
+Dr. Robert Williams,Endocrinology,Atlanta,GA,4.5
+Dr. Patricia Smith,Gastroenterology,Atlanta,GA,3.1
+Dr. Patricia Brown,Psychiatry,Atlanta,GA,4.3
+Dr. Michael Williams,Gastroenterology,Augusta,GA,4.6
+Dr. John Smith,Oncology,Augusta,GA,4.3
+Dr. Mary Smith,Urology,Augusta,GA,4.9
+Dr. Linda Williams,Dermatology,Augusta,GA,4.2
+Dr. Linda Davis,Dermatology,Augusta,GA,4.1
+Dr. Mary Davis,Psychiatry,Augusta,GA,4.1
+Dr. Robert Smith,Oncology,Augusta,GA,4.9
+Dr. Robert Smith,Cardiology,Augusta,GA,4.4
+Dr. James Johnson,Cardiology,Augusta,GA,4.8
+Dr. James Jones,Endocrinology,Augusta,GA,3.4
+Dr. Jennifer Brown,Urology,Augusta,GA,5.0
+Dr. Robert Williams,Urology,Augusta,GA,3.0
+Dr. Patricia Johnson,Cardiology,Augusta,GA,3.6
+Dr. Mary Johnson,Cardiology,Augusta,GA,4.9
+Dr. Jennifer Jones,Psychiatry,Augusta,GA,3.8
+Dr. James Johnson,Endocrinology,Columbus,GA,4.7
+Dr. John Johnson,Pediatrics,Columbus,GA,4.8
+Dr. James Davis,Psychiatry,Columbus,GA,3.3
+Dr. Linda Johnson,Oncology,Columbus,GA,3.5
+Dr. Michael Jones,Dermatology,Columbus,GA,4.7
+Dr. Michael Jones,Urology,Columbus,GA,4.5
+Dr. Mary Williams,Oncology,Columbus,GA,4.1
+Dr. Linda Williams,Endocrinology,Columbus,GA,3.8
+Dr. Patricia Davis,Orthopedics,Columbus,GA,3.4
+Dr. Linda Williams,Orthopedics,Columbus,GA,3.3
+Dr. Jennifer Brown,Orthopedics,Columbus,GA,4.2
+Dr. Robert Johnson,Oncology,Columbus,GA,4.8
+Dr. Linda Johnson,Orthopedics,Macon,GA,3.0
+Dr. John Davis,Endocrinology,Macon,GA,4.4
+Dr. John Williams,Gastroenterology,Macon,GA,4.6
+Dr. Patricia Smith,Cardiology,Macon,GA,3.3
+Dr. Linda Brown,Dermatology,Macon,GA,4.9
+Dr. Robert Johnson,Orthopedics,Macon,GA,3.0
+Dr. John Brown,Orthopedics,Macon,GA,4.5
+Dr. Patricia Jones,Orthopedics,Macon,GA,3.4
+Dr. Robert Smith,Endocrinology,Macon,GA,3.4
+Dr. John Johnson,Dermatology,Macon,GA,3.6
+Dr. Robert Davis,Pediatrics,Macon,GA,3.3
+Dr. Michael Brown,Psychiatry,Macon,GA,3.1
+Dr. Linda Davis,Gastroenterology,Savannah,GA,4.8
+Dr. James Jones,Neurology,Savannah,GA,4.3
+Dr. James Williams,Psychiatry,Savannah,GA,4.7
+Dr. Mary Jones,Dermatology,Savannah,GA,4.5
+Dr. John Jones,Orthopedics,Savannah,GA,3.1
+Dr. Michael Smith,Urology,Savannah,GA,4.4
+Dr. Robert Johnson,Psychiatry,Savannah,GA,4.3
+Dr. Linda Smith,Oncology,Savannah,GA,3.8
+Dr. Robert Williams,Urology,Savannah,GA,3.1
+Dr. Jennifer Johnson,Urology,Savannah,GA,3.8
+Dr. Robert Williams,Oncology,Savannah,GA,3.5
+Dr. Mary Williams,Pediatrics,Savannah,GA,4.0
+Dr. John Jones,Pediatrics,Athens,GA,3.9
+Dr. Robert Williams,Cardiology,Athens,GA,4.8
+Dr. James Williams,Psychiatry,Athens,GA,3.3
+Dr. Michael Davis,Dermatology,Athens,GA,3.3
+Dr. Michael Brown,Endocrinology,Athens,GA,4.2
+Dr. John Williams,Psychiatry,Athens,GA,4.3
+Dr. Mary Jones,Cardiology,Athens,GA,4.7
+Dr. Patricia Brown,Dermatology,Athens,GA,4.1
+Dr. Patricia Williams,Endocrinology,Athens,GA,4.6
+Dr. James Davis,Cardiology,Sandy Springs,GA,5.0
+Dr. James Smith,Neurology,Sandy Springs,GA,3.3
+Dr. Mary Jones,Urology,Sandy Springs,GA,4.4
+Dr. Jennifer Smith,Pediatrics,Sandy Springs,GA,4.3
+Dr. Patricia Davis,Psychiatry,Sandy Springs,GA,3.1
+Dr. Robert Johnson,Pediatrics,Sandy Springs,GA,3.9
+Dr. Robert Johnson,Urology,Sandy Springs,GA,4.8
+Dr. Mary Davis,Endocrinology,Sandy Springs,GA,4.7
+Dr. Michael Johnson,Cardiology,Sandy Springs,GA,4.5
+Dr. Michael Davis,Dermatology,Roswell,GA,4.3
+Dr. Robert Smith,Dermatology,Roswell,GA,3.5
+Dr. Patricia Johnson,Cardiology,Roswell,GA,4.8
+Dr. Mary Jones,Endocrinology,Roswell,GA,4.5
+Dr. Michael Johnson,Oncology,Roswell,GA,3.4
+Dr. Patricia Johnson,Neurology,Roswell,GA,4.3
+Dr. Michael Smith,Oncology,Roswell,GA,4.3
+Dr. Linda Johnson,Pediatrics,Roswell,GA,4.3
+Dr. Robert Johnson,Dermatology,Roswell,GA,4.9
+Dr. John Davis,Pediatrics,Johns Creek,GA,3.7
+Dr. John Smith,Pediatrics,Johns Creek,GA,3.7
+Dr. Michael Davis,Pediatrics,Johns Creek,GA,4.3
+Dr. Robert Smith,Oncology,Johns Creek,GA,4.4
+Dr. James Davis,Psychiatry,Johns Creek,GA,3.6
+Dr. Mary Johnson,Orthopedics,Johns Creek,GA,4.1
+Dr. John Davis,Gastroenterology,Albany,GA,4.4
+Dr. Jennifer Williams,Neurology,Albany,GA,4.8
+Dr. James Davis,Endocrinology,Albany,GA,3.3
+Dr. Mary Brown,Psychiatry,Albany,GA,3.2
+Dr. Robert Jones,Gastroenterology,Albany,GA,3.8
+Dr. Jennifer Williams,Oncology,Albany,GA,4.1
+Dr. James Davis,Pediatrics,Warner Robins,GA,3.1
+Dr. James Jones,Oncology,Warner Robins,GA,4.4
+Dr. John Davis,Dermatology,Warner Robins,GA,4.3
+Dr. Mary Jones,Psychiatry,Warner Robins,GA,4.7
+Dr. Michael Jones,Oncology,Warner Robins,GA,3.4
+Dr. Mary Jones,Neurology,Warner Robins,GA,3.6
+Dr. James Johnson,Urology,Alpharetta,GA,3.3
+Dr. Jennifer Davis,Pediatrics,Alpharetta,GA,4.0
+Dr. James Williams,Pediatrics,Alpharetta,GA,3.5
+Dr. John Smith,Pediatrics,Alpharetta,GA,4.9
+Dr. Jennifer Jones,Neurology,Alpharetta,GA,3.6
+Dr. Michael Johnson,Gastroenterology,Alpharetta,GA,3.1
+Dr. Jennifer Johnson,Oncology,Marietta,GA,4.9
+Dr. Jennifer Davis,Endocrinology,Marietta,GA,4.9
+Dr. James Davis,Gastroenterology,Marietta,GA,4.7
+Dr. John Williams,Gastroenterology,Marietta,GA,4.3
+Dr. Linda Smith,Orthopedics,Marietta,GA,4.0
+Dr. Linda Smith,Psychiatry,Marietta,GA,4.6
+Dr. Michael Smith,Urology,Valdosta,GA,4.0
+Dr. Michael Smith,Cardiology,Valdosta,GA,4.2
+Dr. Jennifer Williams,Gastroenterology,Valdosta,GA,3.1
+Dr. Robert Smith,Endocrinology,Smyrna,GA,4.3
+Dr. Michael Smith,Neurology,Smyrna,GA,4.2
+Dr. Mary Smith,Gastroenterology,Smyrna,GA,3.5
+Dr. Patricia Johnson,Endocrinology,Brookhaven,GA,4.1
+Dr. Mary Davis,Cardiology,Brookhaven,GA,3.8
+Dr. Michael Jones,Orthopedics,Brookhaven,GA,5.0
