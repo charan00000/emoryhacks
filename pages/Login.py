@@ -110,9 +110,12 @@ with signup:
                     st.rerun()
                     st.switch_page("pages/Profile_Information.py")
 bar, text, bar = st.columns(3)
-st.markdown(
-    f"""
-	<h3>  </h3>
+
+text.markdown(
+    """
+<style> h3 {text-align:center; color:black;} </style>
+<h3>-OR-</h3>
 """,
     unsafe_allow_html=True,
 )
+google_logo = "./static/google-icon.svg"
