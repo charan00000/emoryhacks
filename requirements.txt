@@ -180,6 +180,7 @@ streamlit-embedcode==0.1.2
 streamlit-extras==0.6.0
 streamlit-faker==0.0.3
 streamlit-image-coordinates==0.1.9
+streamlit-js-eval==0.1.7
 streamlit-keyup==0.3.0
 streamlit-option-menu==0.4.0
 streamlit-toggle-switch==1.0.2
@@ -204,6 +205,7 @@ Twisted==24.11.0
 typing_extensions==4.12.2
 tzdata==2025.1
 tzlocal==5.3.1
+undetected-chromedriver==3.5.5
 uritemplate==4.1.1
 uritools==4.0.3
 urllib3==2.3.0
