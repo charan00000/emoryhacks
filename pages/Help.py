@@ -1,9 +1,15 @@
 import streamlit as st
+from helper_methods import load_css
 
 LOGO = "static/emory_hack_logo.png"
 
-with open("static/style.css") as css:
-    st.markdown(f"<style>{css.read()}</style>", unsafe_allow_html=True)
+st.set_page_config(
+    page_title="Help - ReferAI",
+    layout="wide",
+    page_icon=LOGO
+    )
+
+load_css()
 
 st.logo(LOGO, icon_image=LOGO, size="large")
 # Page title

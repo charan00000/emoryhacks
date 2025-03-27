@@ -1,14 +1,17 @@
 import streamlit as st
+from helper_methods import load_css
 
 LOGO = "static/emory_hack_logo.png"
 
-st.set_page_config(page_title="About Us - ReferAI", layout="wide")
+st.set_page_config(
+    page_title="About Us - ReferAI",
+    layout="wide",
+    page_icon=LOGO
+    )
 
-with open("static/style.css") as css:
-    st.markdown(f"<style>{css.read()}</style>", unsafe_allow_html=True)
+load_css()
 
 st.logo(LOGO, icon_image=LOGO, size="large")
-import streamlit as st
 
 st.title("🚀 About the Team Behind ReferAI")
 st.write("""
