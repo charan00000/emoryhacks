@@ -53,4 +53,5 @@ def generate(input, history, num_responses):
 
 
 if __name__ == '__main__':
-    print(generate("I have a headache"))
+    #print(generate("I have a headache"))
+    print(generativeai.GenerativeModel.count_tokens)

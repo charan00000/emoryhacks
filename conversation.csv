@@ -1,55 +1,28 @@
 Sender,Message
-<<<<<<< Updated upstream
-human,headache
-ai,"Okay, I'm here to help. You're experiencing a headache. To understand what might be going on, can you tell me, **where is the headache located? Is it on one side of your head, both sides, or all over?**
+human,I have a headache
+ai,"Okay, I understand you're experiencing a headache. To help me understand what might be going on, can you describe the location of your headache? Is it all over, on one side, in your forehead, or somewhere else?
 "
-human,all over
-ai,"Okay, and it's all over your head. Thanks.
-
-To get a better understanding of your headache, could you describe the pain? Is it throbbing, sharp, dull, or something else?
+human,forehead
+ai,"Okay, you're experiencing a headache located in your forehead. On a scale of 1 to 10, with 1 being very mild and 10 being the worst headache you can imagine, how would you rate the intensity of your headache?
 "
-human,dull
-ai,"Okay, it's all over your head and the pain is dull.
-
-How long have you been experiencing this dull headache?
+human,3
+ai,"Okay, you're experiencing a headache in your forehead with an intensity of 3 out of 10. How long have you been experiencing this headache?
 "
 human,3 days
-ai,"Okay, so you've had a dull headache all over your head for the past 3 days.
+ai,"Okay, you've had a headache in your forehead at a level 3 intensity for the past 3 days. Some possible causes of a headache in the forehead include tension headaches, sinus infections, or eye strain.
 
-A headache that is all over and dull in nature and has been present for 3 days could indicate a tension headache, but it could also be related to other factors like stress, dehydration, or even eye strain.
-
-Have you noticed any other symptoms accompanying the headache, such as neck stiffness, sensitivity to light or sound, nausea, or vision changes?
+Have you noticed any nasal congestion, facial pressure, or discharge along with your headache?
 "
 human,no
-ai,"Okay, so you've had a dull headache all over your head for the past 3 days, and you haven't noticed any other symptoms.
+ai,"Okay, you haven't noticed any nasal congestion, facial pressure, or discharge along with your headache.
 
-Since it's been 3 days, have you tried any over-the-counter pain relievers like ibuprofen or acetaminophen? If so, did they provide any relief?
+Have you experienced any changes in your vision, such as blurriness or difficulty focusing, since the headache started?
 "
 human,no
-ai,"Okay, so you've had a dull headache all over your head for the past 3 days, you haven't noticed any other symptoms, and over-the-counter pain relievers haven't provided any relief.
+ai,"Okay, you haven't experienced any changes in your vision, such as blurriness or difficulty focusing, since the headache started.
 
-Are you currently experiencing any stress or anxiety?
-=======
-human,i am having chest pain
-ai,"Okay, I understand you're having chest pain. I'm here to help gather some information so we can figure out what might be going on.
-
-To start, can you describe the chest pain? Is it sharp, dull, crushing, or something else?
+Given that you have a headache in your forehead that has lasted for 3 days at a level 3 intensity without any nasal congestion or vision changes, it would be helpful to know if you've been experiencing any sensitivity to light or sound?
 "
-human,sharp
-ai,"Okay, the pain is sharp. Can you tell me exactly where in your chest you feel the sharp pain? Is it on the left, right, center, or all over?
-"
-human,heart
-ai,"Since you're indicating the sharp pain is related to your heart, can you describe how long the sharp pain lasts when you feel it?
-"
-human,consta
-ai,"Given that the pain is sharp and located near your heart, and now you're saying it's constant, I want to rule out a few things. Does the pain radiate to your arm, shoulder, neck, or jaw? This could give us a better understanding of the potential cause. I am not a medical professional, and this is not a diagnosis, but constant sharp pain near the heart needs further investigation.
-"
-human,allat
-ai,"I see. You mentioned ""allat."" Is that related to anything that might be triggering or worsening the constant, sharp pain in your chest?
-"
-human,all
-ai,"Okay, I understand. The sharp pain near your heart is constant and radiates to your arm, shoulder, neck, and jaw.
-
-Have you noticed any other symptoms accompanying the chest pain, such as shortness of breath, sweating, nausea, or dizziness? This information will help me get a better understanding of your situation.
->>>>>>> Stashed changes
+human,no
+ai,"(sender: human, message: no)
 "
